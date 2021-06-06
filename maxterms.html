@@ -1,0 +1,3677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-06 Sun 18:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="F.Ulivi" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org972fb26">1. Maxterms</a>
+<ul>
+<li><a href="#org9bb5b57">1.1. MT vs opcodes</a></li>
+<li><a href="#org496ce19">1.2. Opcodes vs MT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org972fb26" class="outline-2">
+<h2 id="org972fb26"><span class="section-number-2">1</span> Maxterms</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><b>MT</b></th>
+<th scope="col" class="org-left"><b>I0\</b></th>
+<th scope="col" class="org-left"><b>I0</b></th>
+<th scope="col" class="org-left"><b>I1\</b></th>
+<th scope="col" class="org-left"><b>I1</b></th>
+<th scope="col" class="org-left"><b>I2\</b></th>
+<th scope="col" class="org-left"><b>I2</b></th>
+<th scope="col" class="org-left"><b>I3\</b></th>
+<th scope="col" class="org-left"><b>I3</b></th>
+<th scope="col" class="org-left"><b>I4\</b></th>
+<th scope="col" class="org-left"><b>I4</b></th>
+<th scope="col" class="org-left"><b>I5\</b></th>
+<th scope="col" class="org-left"><b>I5</b></th>
+<th scope="col" class="org-left"><b>I6\</b></th>
+<th scope="col" class="org-left"><b>I6</b></th>
+<th scope="col" class="org-left"><b>I7\</b></th>
+<th scope="col" class="org-left"><b>I7</b></th>
+<th scope="col" class="org-left"><b>Fetch</b></th>
+<th scope="col" class="org-left"><b>Clk</b></th>
+<th scope="col" class="org-left"><b>Extra cond.</b></th>
+<th scope="col" class="org-left"><b>Opcode</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">00</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1100 reg12</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1101 reg13</td>
+</tr>
+
+<tr>
+<td class="org-right">02</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1111 reg15</td>
+</tr>
+
+<tr>
+<td class="org-right">03</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1000 SFS/Z 0</td>
+</tr>
+
+<tr>
+<td class="org-right">04</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1110 reg14</td>
+</tr>
+
+<tr>
+<td class="org-right">05</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1010 reg10</td>
+</tr>
+
+<tr>
+<td class="org-right">06</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1000 CLC 0</td>
+</tr>
+
+<tr>
+<td class="org-right">07</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1011 reg11</td>
+</tr>
+
+<tr>
+<td class="org-right">08</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1000 STC 0</td>
+</tr>
+
+<tr>
+<td class="org-right">09</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1001 reg09</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1001 SFS/Z 1</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0001 reg01</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1001 CLC 1</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1001 STC 1</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x111'xxxx STA/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">15</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">11x1'xxxx STI/STR</td>
+</tr>
+
+<tr>
+<td class="org-right">16</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1010 SFS/Z 2</td>
+</tr>
+
+<tr>
+<td class="org-right">17</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xx10'xxxx LDA/LDI</td>
+</tr>
+
+<tr>
+<td class="org-right">18</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1010 CLC 2</td>
+</tr>
+
+<tr>
+<td class="org-right">19</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1010 STC 2</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0100 reg04</td>
+</tr>
+
+<tr>
+<td class="org-right">21</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1011 SFS/Z 3</td>
+</tr>
+
+<tr>
+<td class="org-right">22</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0101 reg05</td>
+</tr>
+
+<tr>
+<td class="org-right">23</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0111 reg07</td>
+</tr>
+
+<tr>
+<td class="org-right">24</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1011 CLC 3</td>
+</tr>
+
+<tr>
+<td class="org-right">25</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0110 reg06</td>
+</tr>
+
+<tr>
+<td class="org-right">26</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1011 STC 3</td>
+</tr>
+
+<tr>
+<td class="org-right">27</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0010 reg02</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">111x'xxxx LDI/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">29</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0011 reg03</td>
+</tr>
+
+<tr>
+<td class="org-right">30</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1001'xxxx JAI/JAS</td>
+</tr>
+
+<tr>
+<td class="org-right">31</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'1000 reg08</td>
+</tr>
+
+<tr>
+<td class="org-right">32</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1001'xxxx JAI/JAS</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'0000 reg00</td>
+</tr>
+
+<tr>
+<td class="org-right">34</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">111x'xxxx LDI/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">111x'xxxx LDI/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">36</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1001'xxxx JAI/JAS</td>
+</tr>
+
+<tr>
+<td class="org-right">37</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'xx00 SLE/SGT</td>
+</tr>
+
+<tr>
+<td class="org-right">38</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1001'xxxx JAI/JAS</td>
+</tr>
+
+<tr>
+<td class="org-right">39</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'xx10 SEQ/SNE</td>
+</tr>
+
+<tr>
+<td class="org-right">40</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'xx01 SLT/SGE</td>
+</tr>
+
+<tr>
+<td class="org-right">41</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">111x'xxxx LDI/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">42</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxxx'xx11 SAZ/SAN</td>
+</tr>
+
+<tr>
+<td class="org-right">43</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1100 SFS/Z 4</td>
+</tr>
+
+<tr>
+<td class="org-right">44</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1100 CLC 4</td>
+</tr>
+
+<tr>
+<td class="org-right">45</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1111 SES/SEZ</td>
+</tr>
+
+<tr>
+<td class="org-right">46</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1011'0101 CLE</td>
+</tr>
+
+<tr>
+<td class="org-right">47</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1100 STC 4</td>
+</tr>
+
+<tr>
+<td class="org-right">48</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1011'0100 STE</td>
+</tr>
+
+<tr>
+<td class="org-right">49</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1101 SFS/Z 5</td>
+</tr>
+
+<tr>
+<td class="org-right">50</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1101 CLC 5</td>
+</tr>
+
+<tr>
+<td class="org-right">51</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x0xx Sel. INx/DEx for E</td>
+</tr>
+
+<tr>
+<td class="org-right">52</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x1x0'1111 LDR</td>
+</tr>
+
+<tr>
+<td class="org-right">53</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0x00'0xxx Acc. ops</td>
+</tr>
+
+<tr>
+<td class="org-right">54</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x110'xxxx LDI/LDA</td>
+</tr>
+
+<tr>
+<td class="org-right">55</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">01x0'xxxx INA/LDA</td>
+</tr>
+
+<tr>
+<td class="org-right">56</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1101 STC 5</td>
+</tr>
+
+<tr>
+<td class="org-right">57</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'1110 SFS/Z 6</td>
+</tr>
+
+<tr>
+<td class="org-right">58</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1110 CLC 6</td>
+</tr>
+
+<tr>
+<td class="org-right">59</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x101 CMA</td>
+</tr>
+
+<tr>
+<td class="org-right">60</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x0xx INx/DEx</td>
+</tr>
+
+<tr>
+<td class="org-right">61</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1110 STC 6</td>
+</tr>
+
+<tr>
+<td class="org-right">62</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x100 CLA</td>
+</tr>
+
+<tr>
+<td class="org-right">63</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x111 LSA</td>
+</tr>
+
+<tr>
+<td class="org-right">64</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0xx'x110 RSA</td>
+</tr>
+
+<tr>
+<td class="org-right">65</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'1111 ENI</td>
+</tr>
+
+<tr>
+<td class="org-right">66</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x1xx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">67</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1011'0001 RTE</td>
+</tr>
+
+<tr>
+<td class="org-right">68</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1111 DSI</td>
+</tr>
+
+<tr>
+<td class="org-right">69</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">70</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">71</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0xx1'xxxx OTA</td>
+</tr>
+
+<tr>
+<td class="org-right">72</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xx00'xxxx INA/JMP/JSB</td>
+</tr>
+
+<tr>
+<td class="org-right">73</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">110x'xxxx STR/LDR</td>
+</tr>
+
+<tr>
+<td class="org-right">74</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0xx1'xxxx STA/OTA</td>
+</tr>
+
+<tr>
+<td class="org-right">75</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xx11'xxxx STA/STI</td>
+</tr>
+
+<tr>
+<td class="org-right">76</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x0x1'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">77</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0000 SBS/Z 0</td>
+</tr>
+
+<tr>
+<td class="org-right">78</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0000 SBN 0</td>
+</tr>
+
+<tr>
+<td class="org-right">79</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0000 CBN 0</td>
+</tr>
+
+<tr>
+<td class="org-right">80</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0001 SBS/Z 1</td>
+</tr>
+
+<tr>
+<td class="org-right">81</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0001 SBN 1</td>
+</tr>
+
+<tr>
+<td class="org-right">82</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0001 CBN 1</td>
+</tr>
+
+<tr>
+<td class="org-right">83</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0010 SBS/Z 2</td>
+</tr>
+
+<tr>
+<td class="org-right">84</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0010 SBN 2</td>
+</tr>
+
+<tr>
+<td class="org-right">85</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0010 CBN 2</td>
+</tr>
+
+<tr>
+<td class="org-right">86</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0011 SBS/Z 3</td>
+</tr>
+
+<tr>
+<td class="org-right">87</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0011 SBN 3</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0011 CBN 3</td>
+</tr>
+
+<tr>
+<td class="org-right">89</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0100 SBS/Z 4</td>
+</tr>
+
+<tr>
+<td class="org-right">90</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0100 SBN 4</td>
+</tr>
+
+<tr>
+<td class="org-right">91</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0100 CBN 4</td>
+</tr>
+
+<tr>
+<td class="org-right">92</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0101 SBS/Z 5</td>
+</tr>
+
+<tr>
+<td class="org-right">93</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0101 SBN 5</td>
+</tr>
+
+<tr>
+<td class="org-right">94</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0101 CBN 5</td>
+</tr>
+
+<tr>
+<td class="org-right">95</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0110 SBS/Z 6</td>
+</tr>
+
+<tr>
+<td class="org-right">96</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0110 SBN 6</td>
+</tr>
+
+<tr>
+<td class="org-right">97</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0110 CBN 6</td>
+</tr>
+
+<tr>
+<td class="org-right">98</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">xxx1'0111 SBS/Z 7</td>
+</tr>
+
+<tr>
+<td class="org-right">99</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0010'0111 SBN 7</td>
+</tr>
+
+<tr>
+<td class="org-right">100</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1010'0111 CBN 7</td>
+</tr>
+
+<tr>
+<td class="org-right">101</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0xxx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">102</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">100x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">103</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">101x'1xxx RTS/RSE</td>
+</tr>
+
+<tr>
+<td class="org-right">104</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ph1 = 0</td>
+<td class="org-left">100x'1xxx JSB/JAS</td>
+</tr>
+
+<tr>
+<td class="org-right">105</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ph1 = 0</td>
+<td class="org-left">10x1'x00x</td>
+</tr>
+
+<tr>
+<td class="org-right">106</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x100'xxx0</td>
+</tr>
+
+<tr>
+<td class="org-right">107</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">010x'xxx0</td>
+</tr>
+
+<tr>
+<td class="org-right">108</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">101x'0xxx RTI/RTE</td>
+</tr>
+
+<tr>
+<td class="org-right">109</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">10xx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">110</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x100'xx0x</td>
+</tr>
+
+<tr>
+<td class="org-right">111</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">10x1'x00x</td>
+</tr>
+
+<tr>
+<td class="org-right">112</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">010x'xx0x</td>
+</tr>
+
+<tr>
+<td class="org-right">113</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x100'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">114</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">010x'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">115</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1x0x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">116</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x100'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">117</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0011'xxxx SBZ/SFZ/SEZ</td>
+</tr>
+
+<tr>
+<td class="org-right">118</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">010x'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">119</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0000'11xx SLE/SGE/SNE/SAN</td>
+</tr>
+
+<tr>
+<td class="org-right">120</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0100'xxxx INA</td>
+</tr>
+
+<tr>
+<td class="org-right">121</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0001'xxxx SBS/SFS/SES</td>
+</tr>
+
+<tr>
+<td class="org-right">122</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">#</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0000'10xx SGT/SLT/SEQ/SAZ</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org9bb5b57" class="outline-3">
+<h3 id="org9bb5b57"><span class="section-number-3">1.1</span> MT vs opcodes</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+000 xxxx'1100
+001 xxxx'1101
+002 xxxx'1111
+003 xxx1'1000
+004 xxxx'1110
+005 xxxx'1010
+006 1010'1000
+007 xxxx'1011
+008 0010'1000
+009 xxxx'1001
+010 xxx1'1001
+011 xxxx'0001
+012 1010'1001
+013 0010'1001
+014 x111'xxxx
+015 11x1'xxxx
+016 xxx1'1010
+017 xx10'xxxx
+018 1010'1010
+019 0010'1010
+020 xxxx'0100
+021 xxx1'1011
+022 xxxx'0101
+023 xxxx'0111
+024 1010'1011
+025 xxxx'0110
+026 0010'1011
+027 xxxx'0010
+028 111x'xxxx
+029 xxxx'0011
+030 1001'xxxx
+031 xxxx'1000
+032 1001'xxxx
+033 xxxx'0000
+034 111x'xxxx
+035 111x'xxxx
+036 1001'xxxx
+037 xxxx'xx00
+038 1001'xxxx
+039 xxxx'xx10
+040 xxxx'xx01
+041 111x'xxxx
+042 xxxx'xx11
+043 xxx1'1100
+044 1010'1100
+045 xxx1'1111
+046 1011'0101
+047 0010'1100
+048 1011'0100
+049 xxx1'1101
+050 1010'1101
+051 x0xx'x0xx
+052 x1x0'1111
+053 0x00'0xxx
+054 x110'xxxx
+055 01x0'xxxx
+056 0010'1101
+057 xxx1'1110
+058 1010'1110
+059 x0xx'x101
+060 x0xx'x0xx
+061 0010'1110
+062 x0xx'x100
+063 x0xx'x111
+064 x0xx'x110
+065 0010'1111
+066 x1xx'xxxx
+067 1011'0001
+068 1010'1111
+069 xxxx'xxxx
+070 1010'1111
+071 0xx1'xxxx
+072 xx00'xxxx
+073 110x'xxxx
+074 0xx1'xxxx
+075 xx11'xxxx
+076 x0x1'xxxx
+077 xxx1'0000
+078 0010'0000
+079 1010'0000
+080 xxx1'0001
+081 0010'0001
+082 1010'0001
+083 xxx1'0010
+084 0010'0010
+085 1010'0010
+086 xxx1'0011
+087 0010'0011
+088 1010'0011
+089 xxx1'0100
+090 0010'0100
+091 1010'0100
+092 xxx1'0101
+093 0010'0101
+094 1010'0101
+095 xxx1'0110
+096 0010'0110
+097 1010'0110
+098 xxx1'0111
+099 0010'0111
+100 1010'0111
+101 0xxx'xxxx
+102 100x'xxxx
+103 101x'1xxx
+104 100x'1xxx
+105 10x1'100x
+106 x100'xxx0
+107 010x'xxx0
+108 101x'0xxx
+109 10xx'xxxx
+110 x100'xx0x
+111 10x1'x00x
+112 010x'xx0x
+113 x100'x0xx
+114 010x'x0xx
+115 1x0x'xxxx
+116 x100'0xxx
+117 0011'xxxx
+118 010x'0xxx
+119 0000'11xx
+120 0100'xxxx
+121 0001'xxxx
+122 0000'10xx
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org496ce19" class="outline-3">
+<h3 id="org496ce19"><span class="section-number-3">1.2</span> Opcodes vs MT</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+00: 033 037 051 053 060 069 072 101 
+01: 011 040 051 053 060 069 072 101 
+02: 027 039 051 053 060 069 072 101 
+03: 029 042 051 053 060 069 072 101 
+04: 020 037 053 062 069 072 101 
+05: 022 040 053 059 069 072 101 
+06: 025 039 053 064 069 072 101 
+07: 023 042 053 063 069 072 101 
+08: 031 037 051 060 069 072 101 122 
+09: 009 040 051 060 069 072 101 122 
+0a: 005 039 051 060 069 072 101 122 
+0b: 007 042 051 060 069 072 101 122 
+0c: 000 037 062 069 072 101 119 
+0d: 001 040 059 069 072 101 119 
+0e: 004 039 064 069 072 101 119 
+0f: 002 042 063 069 072 101 119 
+10: 033 037 051 060 069 071 074 076 077 101 121 
+11: 011 040 051 060 069 071 074 076 080 101 121 
+12: 027 039 051 060 069 071 074 076 083 101 121 
+13: 029 042 051 060 069 071 074 076 086 101 121 
+14: 020 037 062 069 071 074 076 089 101 121 
+15: 022 040 059 069 071 074 076 092 101 121 
+16: 025 039 064 069 071 074 076 095 101 121 
+17: 023 042 063 069 071 074 076 098 101 121 
+18: 003 031 037 051 060 069 071 074 076 101 121 
+19: 009 010 040 051 060 069 071 074 076 101 121 
+1a: 005 016 039 051 060 069 071 074 076 101 121 
+1b: 007 021 042 051 060 069 071 074 076 101 121 
+1c: 000 037 043 062 069 071 074 076 101 121 
+1d: 001 040 049 059 069 071 074 076 101 121 
+1e: 004 039 057 064 069 071 074 076 101 121 
+1f: 002 042 045 063 069 071 074 076 101 121 
+20: 017 033 037 051 060 069 078 101 
+21: 011 017 040 051 060 069 081 101 
+22: 017 027 039 051 060 069 084 101 
+23: 017 029 042 051 060 069 087 101 
+24: 017 020 037 062 069 090 101 
+25: 017 022 040 059 069 093 101 
+26: 017 025 039 064 069 096 101 
+27: 017 023 042 063 069 099 101 
+28: 008 017 031 037 051 060 069 101 
+29: 009 013 017 040 051 060 069 101 
+2a: 005 017 019 039 051 060 069 101 
+2b: 007 017 026 042 051 060 069 101 
+2c: 000 017 037 047 062 069 101 
+2d: 001 017 040 056 059 069 101 
+2e: 004 017 039 061 064 069 101 
+2f: 002 017 042 063 065 069 101 
+30: 033 037 051 060 069 071 074 075 076 077 101 117 
+31: 011 040 051 060 069 071 074 075 076 080 101 117 
+32: 027 039 051 060 069 071 074 075 076 083 101 117 
+33: 029 042 051 060 069 071 074 075 076 086 101 117 
+34: 020 037 062 069 071 074 075 076 089 101 117 
+35: 022 040 059 069 071 074 075 076 092 101 117 
+36: 025 039 064 069 071 074 075 076 095 101 117 
+37: 023 042 063 069 071 074 075 076 098 101 117 
+38: 003 031 037 051 060 069 071 074 075 076 101 117 
+39: 009 010 040 051 060 069 071 074 075 076 101 117 
+3a: 005 016 039 051 060 069 071 074 075 076 101 117 
+3b: 007 021 042 051 060 069 071 074 075 076 101 117 
+3c: 000 037 043 062 069 071 074 075 076 101 117 
+3d: 001 040 049 059 069 071 074 075 076 101 117 
+3e: 004 039 057 064 069 071 074 075 076 101 117 
+3f: 002 042 045 063 069 071 074 075 076 101 117 
+40: 033 037 053 055 066 069 072 101 106 107 110 112 113 114 116 118 120 
+41: 011 040 053 055 066 069 072 101 110 112 113 114 116 118 120 
+42: 027 039 053 055 066 069 072 101 106 107 113 114 116 118 120 
+43: 029 042 053 055 066 069 072 101 113 114 116 118 120 
+44: 020 037 053 055 066 069 072 101 106 107 110 112 116 118 120 
+45: 022 040 053 055 066 069 072 101 110 112 116 118 120 
+46: 025 039 053 055 066 069 072 101 106 107 116 118 120 
+47: 023 042 053 055 066 069 072 101 116 118 120 
+48: 031 037 055 066 069 072 101 106 107 110 112 113 114 120 
+49: 009 040 055 066 069 072 101 110 112 113 114 120 
+4a: 005 039 055 066 069 072 101 106 107 113 114 120 
+4b: 007 042 055 066 069 072 101 113 114 120 
+4c: 000 037 055 066 069 072 101 106 107 110 112 120 
+4d: 001 040 055 066 069 072 101 110 112 120 
+4e: 004 039 055 066 069 072 101 106 107 120 
+4f: 002 042 052 055 066 069 072 101 120 
+50: 033 037 066 069 071 074 077 101 107 112 114 118 
+51: 011 040 066 069 071 074 080 101 112 114 118 
+52: 027 039 066 069 071 074 083 101 107 114 118 
+53: 029 042 066 069 071 074 086 101 114 118 
+54: 020 037 066 069 071 074 089 101 107 112 118 
+55: 022 040 066 069 071 074 092 101 112 118 
+56: 025 039 066 069 071 074 095 101 107 118 
+57: 023 042 066 069 071 074 098 101 118 
+58: 003 031 037 066 069 071 074 101 107 112 114 
+59: 009 010 040 066 069 071 074 101 112 114 
+5a: 005 016 039 066 069 071 074 101 107 114 
+5b: 007 021 042 066 069 071 074 101 114 
+5c: 000 037 043 066 069 071 074 101 107 112 
+5d: 001 040 049 066 069 071 074 101 112 
+5e: 004 039 057 066 069 071 074 101 107 
+5f: 002 042 045 066 069 071 074 101 
+60: 017 033 037 054 055 066 069 101 
+61: 011 017 040 054 055 066 069 101 
+62: 017 027 039 054 055 066 069 101 
+63: 017 029 042 054 055 066 069 101 
+64: 017 020 037 054 055 066 069 101 
+65: 017 022 040 054 055 066 069 101 
+66: 017 025 039 054 055 066 069 101 
+67: 017 023 042 054 055 066 069 101 
+68: 017 031 037 054 055 066 069 101 
+69: 009 017 040 054 055 066 069 101 
+6a: 005 017 039 054 055 066 069 101 
+6b: 007 017 042 054 055 066 069 101 
+6c: 000 017 037 054 055 066 069 101 
+6d: 001 017 040 054 055 066 069 101 
+6e: 004 017 039 054 055 066 069 101 
+6f: 002 017 042 052 054 055 066 069 101 
+70: 014 033 037 066 069 071 074 075 077 101 
+71: 011 014 040 066 069 071 074 075 080 101 
+72: 014 027 039 066 069 071 074 075 083 101 
+73: 014 029 042 066 069 071 074 075 086 101 
+74: 014 020 037 066 069 071 074 075 089 101 
+75: 014 022 040 066 069 071 074 075 092 101 
+76: 014 025 039 066 069 071 074 075 095 101 
+77: 014 023 042 066 069 071 074 075 098 101 
+78: 003 014 031 037 066 069 071 074 075 101 
+79: 009 010 014 040 066 069 071 074 075 101 
+7a: 005 014 016 039 066 069 071 074 075 101 
+7b: 007 014 021 042 066 069 071 074 075 101 
+7c: 000 014 037 043 066 069 071 074 075 101 
+7d: 001 014 040 049 066 069 071 074 075 101 
+7e: 004 014 039 057 066 069 071 074 075 101 
+7f: 002 014 042 045 066 069 071 074 075 101 
+80: 033 037 051 060 069 072 102 109 115 
+81: 011 040 051 060 069 072 102 109 115 
+82: 027 039 051 060 069 072 102 109 115 
+83: 029 042 051 060 069 072 102 109 115 
+84: 020 037 062 069 072 102 109 115 
+85: 022 040 059 069 072 102 109 115 
+86: 025 039 064 069 072 102 109 115 
+87: 023 042 063 069 072 102 109 115 
+88: 031 037 051 060 069 072 102 104 109 115 
+89: 009 040 051 060 069 072 102 104 109 115 
+8a: 005 039 051 060 069 072 102 104 109 115 
+8b: 007 042 051 060 069 072 102 104 109 115 
+8c: 000 037 062 069 072 102 104 109 115 
+8d: 001 040 059 069 072 102 104 109 115 
+8e: 004 039 064 069 072 102 104 109 115 
+8f: 002 042 063 069 072 102 104 109 115 
+90: 030 032 033 036 037 038 051 060 069 076 077 102 109 111 115 
+91: 011 030 032 036 038 040 051 060 069 076 080 102 109 111 115 
+92: 027 030 032 036 038 039 051 060 069 076 083 102 109 115 
+93: 029 030 032 036 038 042 051 060 069 076 086 102 109 115 
+94: 020 030 032 036 037 038 062 069 076 089 102 109 115 
+95: 022 030 032 036 038 040 059 069 076 092 102 109 115 
+96: 025 030 032 036 038 039 064 069 076 095 102 109 115 
+97: 023 030 032 036 038 042 063 069 076 098 102 109 115 
+98: 003 030 031 032 036 037 038 051 060 069 076 102 104 105 109 111 115 
+99: 009 010 030 032 036 038 040 051 060 069 076 102 104 105 109 111 115 
+9a: 005 016 030 032 036 038 039 051 060 069 076 102 104 109 115 
+9b: 007 021 030 032 036 038 042 051 060 069 076 102 104 109 115 
+9c: 000 030 032 036 037 038 043 062 069 076 102 104 109 115 
+9d: 001 030 032 036 038 040 049 059 069 076 102 104 109 115 
+9e: 004 030 032 036 038 039 057 064 069 076 102 104 109 115 
+9f: 002 030 032 036 038 042 045 063 069 076 102 104 109 115 
+a0: 017 033 037 051 060 069 079 108 109 
+a1: 011 017 040 051 060 069 082 108 109 
+a2: 017 027 039 051 060 069 085 108 109 
+a3: 017 029 042 051 060 069 088 108 109 
+a4: 017 020 037 062 069 091 108 109 
+a5: 017 022 040 059 069 094 108 109 
+a6: 017 025 039 064 069 097 108 109 
+a7: 017 023 042 063 069 100 108 109 
+a8: 006 017 031 037 051 060 069 103 109 
+a9: 009 012 017 040 051 060 069 103 109 
+aa: 005 017 018 039 051 060 069 103 109 
+ab: 007 017 024 042 051 060 069 103 109 
+ac: 000 017 037 044 062 069 103 109 
+ad: 001 017 040 050 059 069 103 109 
+ae: 004 017 039 058 064 069 103 109 
+af: 002 017 042 063 068 069 070 103 109 
+b0: 033 037 051 060 069 075 076 077 108 109 111 
+b1: 011 040 051 060 067 069 075 076 080 108 109 111 
+b2: 027 039 051 060 069 075 076 083 108 109 
+b3: 029 042 051 060 069 075 076 086 108 109 
+b4: 020 037 048 062 069 075 076 089 108 109 
+b5: 022 040 046 059 069 075 076 092 108 109 
+b6: 025 039 064 069 075 076 095 108 109 
+b7: 023 042 063 069 075 076 098 108 109 
+b8: 003 031 037 051 060 069 075 076 103 105 109 111 
+b9: 009 010 040 051 060 069 075 076 103 105 109 111 
+ba: 005 016 039 051 060 069 075 076 103 109 
+bb: 007 021 042 051 060 069 075 076 103 109 
+bc: 000 037 043 062 069 075 076 103 109 
+bd: 001 040 049 059 069 075 076 103 109 
+be: 004 039 057 064 069 075 076 103 109 
+bf: 002 042 045 063 069 075 076 103 109 
+c0: 033 037 066 069 072 073 106 110 113 115 116 
+c1: 011 040 066 069 072 073 110 113 115 116 
+c2: 027 039 066 069 072 073 106 113 115 116 
+c3: 029 042 066 069 072 073 113 115 116 
+c4: 020 037 066 069 072 073 106 110 115 116 
+c5: 022 040 066 069 072 073 110 115 116 
+c6: 025 039 066 069 072 073 106 115 116 
+c7: 023 042 066 069 072 073 115 116 
+c8: 031 037 066 069 072 073 106 110 113 115 
+c9: 009 040 066 069 072 073 110 113 115 
+ca: 005 039 066 069 072 073 106 113 115 
+cb: 007 042 066 069 072 073 113 115 
+cc: 000 037 066 069 072 073 106 110 115 
+cd: 001 040 066 069 072 073 110 115 
+ce: 004 039 066 069 072 073 106 115 
+cf: 002 042 052 066 069 072 073 115 
+d0: 015 033 037 066 069 073 077 115 
+d1: 011 015 040 066 069 073 080 115 
+d2: 015 027 039 066 069 073 083 115 
+d3: 015 029 042 066 069 073 086 115 
+d4: 015 020 037 066 069 073 089 115 
+d5: 015 022 040 066 069 073 092 115 
+d6: 015 025 039 066 069 073 095 115 
+d7: 015 023 042 066 069 073 098 115 
+d8: 003 015 031 037 066 069 073 115 
+d9: 009 010 015 040 066 069 073 115 
+da: 005 015 016 039 066 069 073 115 
+db: 007 015 021 042 066 069 073 115 
+dc: 000 015 037 043 066 069 073 115 
+dd: 001 015 040 049 066 069 073 115 
+de: 004 015 039 057 066 069 073 115 
+df: 002 015 042 045 066 069 073 115 
+e0: 017 028 033 034 035 037 041 054 066 069 
+e1: 011 017 028 034 035 040 041 054 066 069 
+e2: 017 027 028 034 035 039 041 054 066 069 
+e3: 017 028 029 034 035 041 042 054 066 069 
+e4: 017 020 028 034 035 037 041 054 066 069 
+e5: 017 022 028 034 035 040 041 054 066 069 
+e6: 017 025 028 034 035 039 041 054 066 069 
+e7: 017 023 028 034 035 041 042 054 066 069 
+e8: 017 028 031 034 035 037 041 054 066 069 
+e9: 009 017 028 034 035 040 041 054 066 069 
+ea: 005 017 028 034 035 039 041 054 066 069 
+eb: 007 017 028 034 035 041 042 054 066 069 
+ec: 000 017 028 034 035 037 041 054 066 069 
+ed: 001 017 028 034 035 040 041 054 066 069 
+ee: 004 017 028 034 035 039 041 054 066 069 
+ef: 002 017 028 034 035 041 042 052 054 066 069 
+f0: 014 015 028 033 034 035 037 041 066 069 075 077 
+f1: 011 014 015 028 034 035 040 041 066 069 075 080 
+f2: 014 015 027 028 034 035 039 041 066 069 075 083 
+f3: 014 015 028 029 034 035 041 042 066 069 075 086 
+f4: 014 015 020 028 034 035 037 041 066 069 075 089 
+f5: 014 015 022 028 034 035 040 041 066 069 075 092 
+f6: 014 015 025 028 034 035 039 041 066 069 075 095 
+f7: 014 015 023 028 034 035 041 042 066 069 075 098 
+f8: 003 014 015 028 031 034 035 037 041 066 069 075 
+f9: 009 010 014 015 028 034 035 040 041 066 069 075 
+fa: 005 014 015 016 028 034 035 039 041 066 069 075 
+fb: 007 014 015 021 028 034 035 041 042 066 069 075 
+fc: 000 014 015 028 034 035 037 041 043 066 069 075 
+fd: 001 014 015 028 034 035 040 041 049 066 069 075 
+fe: 004 014 015 028 034 035 039 041 057 066 069 075 
+ff: 002 014 015 028 034 035 041 042 045 066 069 075 
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: F.Ulivi</p>
+<p class="date">Created: 2021-06-06 Sun 18:09</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

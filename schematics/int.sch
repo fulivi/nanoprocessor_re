@@ -1,0 +1,426 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 13 65
+Title "Nanoprocessor"
+Date ""
+Rev "A"
+Comp "F.Ulivi - CC-BY-SA"
+Comment1 "Interrupt"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L np:Inverter U417
+U 1 1 6092A9C6
+P 1250 900
+F 0 "U417" H 1250 1125 50  0000 C CNN
+F 1 "Inverter" H 1250 850 50  0001 C CNN
+F 2 "" H 1250 900 50  0001 C CNN
+F 3 "" H 1250 900 50  0001 C CNN
+	1    1250 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  900  950  900 
+$Comp
+L np:NOR2 U408_411
+U 1 1 6092B2E1
+P 2050 1100
+F 0 "U408_411" H 2050 1325 50  0000 C CNN
+F 1 "NOR2" H 2050 1050 50  0001 C CNN
+F 2 "" H 2050 1100 50  0001 C CNN
+F 3 "" H 2050 1100 50  0001 C CNN
+	1    2050 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 900  1700 900 
+Wire Wire Line
+	1700 900  1700 1000
+Wire Wire Line
+	1700 1000 1750 1000
+$Comp
+L np:NOR4 U407_410_412_413
+U 1 1 6092D144
+P 2000 2200
+F 0 "U407_410_412_413" H 2000 2450 50  0000 C CNN
+F 1 "NOR4" H 2000 2150 50  0001 C CNN
+F 2 "" H 2000 2200 50  0001 C CNN
+F 3 "" H 2000 2200 50  0001 C CNN
+	1    2000 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1000 1700 2050
+Connection ~ 1700 1000
+Text GLabel 900  2250 0    50   Input ~ 0
+MT70
+Wire Wire Line
+	900  2250 1700 2250
+$Comp
+L np:NOR2 U393_394
+U 1 1 6092F591
+P 2700 2450
+F 0 "U393_394" H 2700 2675 50  0000 C CNN
+F 1 "NOR2" H 2700 2400 50  0001 C CNN
+F 2 "" H 2700 2450 50  0001 C CNN
+F 3 "" H 2700 2450 50  0001 C CNN
+	1    2700 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2200 2400 2200
+Wire Wire Line
+	2400 2200 2400 2350
+Text GLabel 900  2750 0    50   Input ~ 0
+MT69
+$Comp
+L np:NMOS_ENH Q433
+U 1 1 60930704
+P 1550 2750
+F 0 "Q433" H 1738 2750 50  0000 L CNN
+F 1 "NMOS_ENH" H 1750 2700 50  0001 L CNN
+F 2 "" H 1750 2850 50  0001 C CNN
+F 3 "~" H 1550 2750 50  0001 C CNN
+	1    1550 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 2350 1650 2350
+Wire Wire Line
+	1650 2350 1650 2550
+Wire Wire Line
+	1650 2950 1650 3100
+Wire Wire Line
+	900  2750 1350 2750
+$Comp
+L np:Inverter U403
+U 1 1 60932C4F
+P 3350 2450
+F 0 "U403" H 3350 2675 50  0000 C CNN
+F 1 "Inverter" H 3350 2400 50  0001 C CNN
+F 2 "" H 3350 2450 50  0001 C CNN
+F 3 "" H 3350 2450 50  0001 C CNN
+	1    3350 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 2450 3050 2450
+Wire Wire Line
+	3650 2450 3750 2450
+$Comp
+L np:NOR2 U397_398
+U 1 1 609338E1
+P 2700 3200
+F 0 "U397_398" H 2700 3425 50  0000 C CNN
+F 1 "NOR2" H 2700 3150 50  0001 C CNN
+F 2 "" H 2700 3200 50  0001 C CNN
+F 3 "" H 2700 3200 50  0001 C CNN
+	1    2700 3200
+	1    0    0    -1  
+$EndComp
+Connection ~ 3000 2450
+$Comp
+L np:Inverter U399
+U 1 1 609357DA
+P 3350 1950
+F 0 "U399" H 3350 2175 50  0000 C CNN
+F 1 "Inverter" H 3350 1900 50  0001 C CNN
+F 2 "" H 3350 1950 50  0001 C CNN
+F 3 "" H 3350 1950 50  0001 C CNN
+	1    3350 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 1950 3000 1950
+Wire Wire Line
+	3000 1950 3000 2450
+$Comp
+L np:Inverter_p U392
+U 1 1 60936408
+P 4100 1950
+F 0 "U392" H 4100 2175 50  0000 C CNN
+F 1 "Inverter_p" H 4100 1900 50  0001 C CNN
+F 2 "" H 4100 1950 50  0001 C CNN
+F 3 "" H 4100 1950 50  0001 C CNN
+	1    4100 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1950 3800 1950
+$Comp
+L np:Inverter_p U405
+U 1 1 60936CFC
+P 4850 1950
+F 0 "U405" H 4850 2175 50  0000 C CNN
+F 1 "Inverter_p" H 4850 1900 50  0001 C CNN
+F 2 "" H 4850 1950 50  0001 C CNN
+F 3 "" H 4850 1950 50  0001 C CNN
+	1    4850 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1950 4450 1950
+$Comp
+L np:NMOS_ENH Q404
+U 1 1 609377AC
+P 5450 1950
+F 0 "Q404" H 5638 1950 50  0000 L CNN
+F 1 "NMOS_ENH" H 5650 1900 50  0001 L CNN
+F 2 "" H 5650 2050 50  0001 C CNN
+F 3 "~" H 5450 1950 50  0001 C CNN
+	1    5450 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR?
+U 1 1 60938194
+P 5550 1700
+F 0 "#PWR?" H 5550 1550 50  0001 C CNN
+F 1 "VDD" H 5567 1873 50  0000 C CNN
+F 2 "" H 5550 1700 50  0001 C CNN
+F 3 "" H 5550 1700 50  0001 C CNN
+	1    5550 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 1700 5550 1750
+Wire Wire Line
+	5150 1950 5250 1950
+$Comp
+L np:NMOS_ENH Q391
+U 1 1 60939170
+P 5450 2500
+F 0 "Q391" H 5638 2500 50  0000 L CNN
+F 1 "NMOS_ENH" H 5650 2450 50  0001 L CNN
+F 2 "" H 5650 2600 50  0001 C CNN
+F 3 "~" H 5450 2500 50  0001 C CNN
+	1    5450 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60939D2B
+P 5550 2750
+F 0 "#PWR?" H 5550 2500 50  0001 C CNN
+F 1 "GND" H 5555 2577 50  0000 C CNN
+F 2 "" H 5550 2750 50  0001 C CNN
+F 3 "" H 5550 2750 50  0001 C CNN
+	1    5550 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 2700 5550 2750
+Wire Wire Line
+	5550 2150 5550 2250
+Wire Wire Line
+	4450 1950 4450 2500
+Wire Wire Line
+	4450 2500 5250 2500
+Connection ~ 4450 1950
+Wire Wire Line
+	4450 1950 4550 1950
+Wire Wire Line
+	5550 2250 5650 2250
+Connection ~ 5550 2250
+Wire Wire Line
+	5550 2250 5550 2300
+$Comp
+L np:NOR4 U424_426_431_432
+U 1 1 6093EA72
+P 2000 4450
+F 0 "U424_426_431_432" H 2000 4700 50  0000 C CNN
+F 1 "NOR4" H 2000 4400 50  0001 C CNN
+F 2 "" H 2000 4450 50  0001 C CNN
+F 3 "" H 2000 4450 50  0001 C CNN
+	1    2000 4450
+	1    0    0    -1  
+$EndComp
+Text GLabel 950  4400 0    50   Input ~ 0
+MT68
+Wire Wire Line
+	950  4400 1700 4400
+$Comp
+L np:NOR3 U422_425_429
+U 1 1 6094147A
+P 1950 5200
+F 0 "U422_425_429" H 1950 5425 50  0000 C CNN
+F 1 "NOR3" H 1950 5150 50  0001 C CNN
+F 2 "" H 1950 5200 50  0001 C CNN
+F 3 "" H 1950 5200 50  0001 C CNN
+	1    1950 5200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 4450 2400 4450
+Wire Wire Line
+	2400 4450 2400 5100
+Wire Wire Line
+	2400 5100 2250 5100
+Wire Wire Line
+	1700 4600 1550 4600
+Wire Wire Line
+	1550 4600 1550 5200
+Wire Wire Line
+	1550 5200 1650 5200
+Text GLabel 2450 5200 2    50   Input ~ 0
+MT65
+Wire Wire Line
+	2250 5200 2450 5200
+Text GLabel 2450 5300 2    50   Input ~ 0
+MT67
+Wire Wire Line
+	2250 5300 2450 5300
+$Comp
+L np:Inverter_p U412
+U 1 1 60946446
+P 3000 4450
+F 0 "U412" H 3000 4675 50  0000 C CNN
+F 1 "Inverter_p" H 3000 4400 50  0001 C CNN
+F 2 "" H 3000 4450 50  0001 C CNN
+F 3 "" H 3000 4450 50  0001 C CNN
+	1    3000 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 4450 2700 4450
+Connection ~ 2400 4450
+$Comp
+L np:Inverter_p U420
+U 1 1 60947A83
+P 3700 4450
+F 0 "U420" H 3700 4675 50  0000 C CNN
+F 1 "Inverter_p" H 3700 4400 50  0001 C CNN
+F 2 "" H 3700 4450 50  0001 C CNN
+F 3 "" H 3700 4450 50  0001 C CNN
+	1    3700 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 4450 3350 4450
+$Comp
+L np:NMOS_ENH Q419
+U 1 1 60948E34
+P 4300 4450
+F 0 "Q419" H 4488 4450 50  0000 L CNN
+F 1 "NMOS_ENH" H 4500 4400 50  0001 L CNN
+F 2 "" H 4500 4550 50  0001 C CNN
+F 3 "~" H 4300 4450 50  0001 C CNN
+	1    4300 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR?
+U 1 1 609495FF
+P 4400 4200
+F 0 "#PWR?" H 4400 4050 50  0001 C CNN
+F 1 "VDD" H 4417 4373 50  0000 C CNN
+F 2 "" H 4400 4200 50  0001 C CNN
+F 3 "" H 4400 4200 50  0001 C CNN
+	1    4400 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4200 4400 4250
+Wire Wire Line
+	4000 4450 4100 4450
+$Comp
+L np:NMOS_ENH Q418
+U 1 1 6094B873
+P 4300 5000
+F 0 "Q418" H 4488 5000 50  0000 L CNN
+F 1 "NMOS_ENH" H 4500 4950 50  0001 L CNN
+F 2 "" H 4500 5100 50  0001 C CNN
+F 3 "~" H 4300 5000 50  0001 C CNN
+	1    4300 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6094C93F
+P 4400 5250
+F 0 "#PWR?" H 4400 5000 50  0001 C CNN
+F 1 "GND" H 4405 5077 50  0000 C CNN
+F 2 "" H 4400 5250 50  0001 C CNN
+F 3 "" H 4400 5250 50  0001 C CNN
+	1    4400 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 5200 4400 5250
+Wire Wire Line
+	3350 4450 3350 5000
+Wire Wire Line
+	3350 5000 4100 5000
+Connection ~ 3350 4450
+Wire Wire Line
+	3350 4450 3400 4450
+Wire Wire Line
+	4400 4650 4400 4750
+Wire Wire Line
+	4400 4750 4500 4750
+Connection ~ 4400 4750
+Wire Wire Line
+	4400 4750 4400 4800
+Text HLabel 850  900  0    50   Input ~ 0
+clk
+Text HLabel 850  1200 0    50   Input ~ 0
+ph3
+Wire Wire Line
+	850  1200 1750 1200
+Text HLabel 850  2150 0    50   Input ~ 0
+ph1
+Wire Wire Line
+	850  2150 1700 2150
+Text HLabel 850  3100 0    50   Input ~ 0
+intreq
+Wire Wire Line
+	850  3100 1650 3100
+Text HLabel 3750 2450 2    50   Output ~ 0
+intack
+Text HLabel 5650 2250 2    50   Output ~ 0
+intack_pin
+Text HLabel 850  4300 0    50   Input ~ 0
+intack
+Wire Wire Line
+	850  4300 1700 4300
+Text HLabel 850  4500 0    50   Input ~ 0
+reset
+Wire Wire Line
+	850  4500 1700 4500
+Text HLabel 4500 4750 2    50   Output ~ 0
+intena
+Wire Wire Line
+	2400 2550 2350 2550
+Wire Wire Line
+	2350 2550 2350 2750
+Wire Wire Line
+	3000 3200 3050 3200
+Wire Wire Line
+	3050 3200 3050 2950
+Wire Wire Line
+	3050 2450 3050 2750
+Connection ~ 3050 2450
+Wire Wire Line
+	2400 3100 2350 3100
+Wire Wire Line
+	2350 3100 2350 2950
+Wire Wire Line
+	2350 2750 3050 2950
+Wire Wire Line
+	3050 2750 2350 2950
+Wire Wire Line
+	2350 1100 2400 1100
+Wire Wire Line
+	2400 1100 2400 1500
+Wire Wire Line
+	2400 1500 2300 1500
+Wire Wire Line
+	2300 3300 2400 3300
+Wire Wire Line
+	2300 1500 2300 3300
+$EndSCHEMATC
