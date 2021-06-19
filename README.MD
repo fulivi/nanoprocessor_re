@@ -34,6 +34,10 @@ Interesting things I found
 
 - The "core" of Nanoprocessor (registers, accumulator and comparator) is surrounded by the instruction decoders. Here the direct and complemented output of instruction register is fed to an array of 123 NOR gates together with various clock signals. I called the output of the NORs "MT0..122" (MT is for maxterm) and I tabulated them outside of the schematic for simplicity's sake.
 
+- The so-called indexing (in JAI/JAS/LDI/STI instructions) is done by directly OR-ing the lower nibble of R0 with instruction register. This explains why the HP manual warns that a JAI instruction is turned into a JAS instruction when bit 3 of R0 is 1.
+
+- Part of the thrill of looking into these old processors is finding out the behavior of undefined opcodes. Unfortunately, so to speak, HP took a very clean approach here: all undefined opcodes execute as NOP.
+
 Files
 -----
 
@@ -48,9 +52,9 @@ Files
 Organization of schematics
 --------------------------
 
-In organizing the schematic I tried to replicate through hierarchy the same "copy-paste" approach that the original designers used. It's clear that many of the "regular" blocks of the chip (registers, bits of accumulator and PA, etc.) are formed by geometrically repeating the shape of a basic block multiple times. I used the same approach in the schematic: the basic block is in sub-sheet that's instantiated multiple times.
+In organizing the schematic I tried to replicate through hierarchy the same "copy-paste" approach that the original designers used. It's clear that many of the "regular" blocks of the chip (registers, bits of accumulator and PA, etc.) are formed by geometrically repeating the shape of a basic block multiple times. I used the same approach in the schematic: the basic block is in a sub-sheet that's instantiated multiple times.
 
-In translating networks of transistors to gates, I included the output pull-up resistor/transistor in the gate. So, an inverter in the schematic is formed by two transistors in the chip, a n-input input NOR gates is formed by n+1 transistors and so on.
+In translating networks of transistors to gates, I included the output pull-up resistor/transistor in the gate. So, an inverter in the schematic is formed by two transistors in the chip, a n-input input NOR gate is formed by n+1 transistors and so on.
 
 Most of the times, the output pull-up is tied to VDD. Sometimes a pull-up is connected to VGG: in this case I added a plus sign next to the output.
 
@@ -59,7 +63,7 @@ Pins have a name of the form `PIN_name` and they all are on the main sheet.
 Main signals
 ------------
 
-- `clk`: Main clock signals from outside
+- `clk`: Main clock signal from outside
 
 - `ph1`, `ph3`, `fetch`: derived clock phases
 
@@ -78,11 +82,11 @@ Acknowledgments
 
 - Larry Bower for publishing the original masks of the NP
 
-- The people at CPU shack for cleaning and scanning them
+- The people at [CPU shack](http://cpushack.com/2020/08/20/hp-nanoprocessor-mask-set/) for cleaning and scanning them
 
-- All the people behind the amazing KiCAD
+- All the people behind the amazing [KiCAD](https://www.kicad.org/)
 
-- Last but definitely not least, Ken Shirriff for talking about the NP in his always entertaining blog.
+- Last but definitely not least, Ken Shirriff for talking about the NP in his always entertaining [blog](http://www.righto.com).
 
 License
 -------

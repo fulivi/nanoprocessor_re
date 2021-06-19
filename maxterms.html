@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-06-06 Sun 18:09 -->
+<!-- 2021-06-19 Sat 11:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,17 +233,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org972fb26">1. Maxterms</a>
+<li><a href="#org6a2a2ce">1. Maxterms</a>
 <ul>
-<li><a href="#org9bb5b57">1.1. MT vs opcodes</a></li>
-<li><a href="#org496ce19">1.2. Opcodes vs MT</a></li>
+<li><a href="#orgaa185c6">1.1. MT vs opcodes</a></li>
+<li><a href="#orgf305f5a">1.2. Opcodes vs MT</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org972fb26" class="outline-2">
-<h2 id="org972fb26"><span class="section-number-2">1</span> Maxterms</h2>
+<div id="outline-container-org6a2a2ce" class="outline-2">
+<h2 id="org6a2a2ce"><span class="section-number-2">1</span> Maxterms</h2>
 <div class="outline-text-2" id="text-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -3272,405 +3272,2543 @@ for the JavaScript code in this tag.
 </table>
 </div>
 
-<div id="outline-container-org9bb5b57" class="outline-3">
-<h3 id="org9bb5b57"><span class="section-number-3">1.1</span> MT vs opcodes</h3>
+<div id="outline-container-orgaa185c6" class="outline-3">
+<h3 id="orgaa185c6"><span class="section-number-3">1.1</span> MT vs opcodes</h3>
 <div class="outline-text-3" id="text-1-1">
-<pre class="example">
-000 xxxx'1100
-001 xxxx'1101
-002 xxxx'1111
-003 xxx1'1000
-004 xxxx'1110
-005 xxxx'1010
-006 1010'1000
-007 xxxx'1011
-008 0010'1000
-009 xxxx'1001
-010 xxx1'1001
-011 xxxx'0001
-012 1010'1001
-013 0010'1001
-014 x111'xxxx
-015 11x1'xxxx
-016 xxx1'1010
-017 xx10'xxxx
-018 1010'1010
-019 0010'1010
-020 xxxx'0100
-021 xxx1'1011
-022 xxxx'0101
-023 xxxx'0111
-024 1010'1011
-025 xxxx'0110
-026 0010'1011
-027 xxxx'0010
-028 111x'xxxx
-029 xxxx'0011
-030 1001'xxxx
-031 xxxx'1000
-032 1001'xxxx
-033 xxxx'0000
-034 111x'xxxx
-035 111x'xxxx
-036 1001'xxxx
-037 xxxx'xx00
-038 1001'xxxx
-039 xxxx'xx10
-040 xxxx'xx01
-041 111x'xxxx
-042 xxxx'xx11
-043 xxx1'1100
-044 1010'1100
-045 xxx1'1111
-046 1011'0101
-047 0010'1100
-048 1011'0100
-049 xxx1'1101
-050 1010'1101
-051 x0xx'x0xx
-052 x1x0'1111
-053 0x00'0xxx
-054 x110'xxxx
-055 01x0'xxxx
-056 0010'1101
-057 xxx1'1110
-058 1010'1110
-059 x0xx'x101
-060 x0xx'x0xx
-061 0010'1110
-062 x0xx'x100
-063 x0xx'x111
-064 x0xx'x110
-065 0010'1111
-066 x1xx'xxxx
-067 1011'0001
-068 1010'1111
-069 xxxx'xxxx
-070 1010'1111
-071 0xx1'xxxx
-072 xx00'xxxx
-073 110x'xxxx
-074 0xx1'xxxx
-075 xx11'xxxx
-076 x0x1'xxxx
-077 xxx1'0000
-078 0010'0000
-079 1010'0000
-080 xxx1'0001
-081 0010'0001
-082 1010'0001
-083 xxx1'0010
-084 0010'0010
-085 1010'0010
-086 xxx1'0011
-087 0010'0011
-088 1010'0011
-089 xxx1'0100
-090 0010'0100
-091 1010'0100
-092 xxx1'0101
-093 0010'0101
-094 1010'0101
-095 xxx1'0110
-096 0010'0110
-097 1010'0110
-098 xxx1'0111
-099 0010'0111
-100 1010'0111
-101 0xxx'xxxx
-102 100x'xxxx
-103 101x'1xxx
-104 100x'1xxx
-105 10x1'100x
-106 x100'xxx0
-107 010x'xxx0
-108 101x'0xxx
-109 10xx'xxxx
-110 x100'xx0x
-111 10x1'x00x
-112 010x'xx0x
-113 x100'x0xx
-114 010x'x0xx
-115 1x0x'xxxx
-116 x100'0xxx
-117 0011'xxxx
-118 010x'0xxx
-119 0000'11xx
-120 0100'xxxx
-121 0001'xxxx
-122 0000'10xx
-</pre>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><b>MT</b></th>
+<th scope="col" class="org-left"><b>Opcode</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">000</td>
+<td class="org-left">xxxx'1100</td>
+</tr>
+
+<tr>
+<td class="org-right">001</td>
+<td class="org-left">xxxx'1101</td>
+</tr>
+
+<tr>
+<td class="org-right">002</td>
+<td class="org-left">xxxx'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">003</td>
+<td class="org-left">xxx1'1000</td>
+</tr>
+
+<tr>
+<td class="org-right">004</td>
+<td class="org-left">xxxx'1110</td>
+</tr>
+
+<tr>
+<td class="org-right">005</td>
+<td class="org-left">xxxx'1010</td>
+</tr>
+
+<tr>
+<td class="org-right">006</td>
+<td class="org-left">1010'1000</td>
+</tr>
+
+<tr>
+<td class="org-right">007</td>
+<td class="org-left">xxxx'1011</td>
+</tr>
+
+<tr>
+<td class="org-right">008</td>
+<td class="org-left">0010'1000</td>
+</tr>
+
+<tr>
+<td class="org-right">009</td>
+<td class="org-left">xxxx'1001</td>
+</tr>
+
+<tr>
+<td class="org-right">010</td>
+<td class="org-left">xxx1'1001</td>
+</tr>
+
+<tr>
+<td class="org-right">011</td>
+<td class="org-left">xxxx'0001</td>
+</tr>
+
+<tr>
+<td class="org-right">012</td>
+<td class="org-left">1010'1001</td>
+</tr>
+
+<tr>
+<td class="org-right">013</td>
+<td class="org-left">0010'1001</td>
+</tr>
+
+<tr>
+<td class="org-right">014</td>
+<td class="org-left">x111'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">015</td>
+<td class="org-left">11x1'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">016</td>
+<td class="org-left">xxx1'1010</td>
+</tr>
+
+<tr>
+<td class="org-right">017</td>
+<td class="org-left">xx10'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">018</td>
+<td class="org-left">1010'1010</td>
+</tr>
+
+<tr>
+<td class="org-right">019</td>
+<td class="org-left">0010'1010</td>
+</tr>
+
+<tr>
+<td class="org-right">020</td>
+<td class="org-left">xxxx'0100</td>
+</tr>
+
+<tr>
+<td class="org-right">021</td>
+<td class="org-left">xxx1'1011</td>
+</tr>
+
+<tr>
+<td class="org-right">022</td>
+<td class="org-left">xxxx'0101</td>
+</tr>
+
+<tr>
+<td class="org-right">023</td>
+<td class="org-left">xxxx'0111</td>
+</tr>
+
+<tr>
+<td class="org-right">024</td>
+<td class="org-left">1010'1011</td>
+</tr>
+
+<tr>
+<td class="org-right">025</td>
+<td class="org-left">xxxx'0110</td>
+</tr>
+
+<tr>
+<td class="org-right">026</td>
+<td class="org-left">0010'1011</td>
+</tr>
+
+<tr>
+<td class="org-right">027</td>
+<td class="org-left">xxxx'0010</td>
+</tr>
+
+<tr>
+<td class="org-right">028</td>
+<td class="org-left">111x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">029</td>
+<td class="org-left">xxxx'0011</td>
+</tr>
+
+<tr>
+<td class="org-right">030</td>
+<td class="org-left">1001'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">031</td>
+<td class="org-left">xxxx'1000</td>
+</tr>
+
+<tr>
+<td class="org-right">032</td>
+<td class="org-left">1001'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">033</td>
+<td class="org-left">xxxx'0000</td>
+</tr>
+
+<tr>
+<td class="org-right">034</td>
+<td class="org-left">111x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">035</td>
+<td class="org-left">111x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">036</td>
+<td class="org-left">1001'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">037</td>
+<td class="org-left">xxxx'xx00</td>
+</tr>
+
+<tr>
+<td class="org-right">038</td>
+<td class="org-left">1001'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">039</td>
+<td class="org-left">xxxx'xx10</td>
+</tr>
+
+<tr>
+<td class="org-right">040</td>
+<td class="org-left">xxxx'xx01</td>
+</tr>
+
+<tr>
+<td class="org-right">041</td>
+<td class="org-left">111x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">042</td>
+<td class="org-left">xxxx'xx11</td>
+</tr>
+
+<tr>
+<td class="org-right">043</td>
+<td class="org-left">xxx1'1100</td>
+</tr>
+
+<tr>
+<td class="org-right">044</td>
+<td class="org-left">1010'1100</td>
+</tr>
+
+<tr>
+<td class="org-right">045</td>
+<td class="org-left">xxx1'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">046</td>
+<td class="org-left">1011'0101</td>
+</tr>
+
+<tr>
+<td class="org-right">047</td>
+<td class="org-left">0010'1100</td>
+</tr>
+
+<tr>
+<td class="org-right">048</td>
+<td class="org-left">1011'0100</td>
+</tr>
+
+<tr>
+<td class="org-right">049</td>
+<td class="org-left">xxx1'1101</td>
+</tr>
+
+<tr>
+<td class="org-right">050</td>
+<td class="org-left">1010'1101</td>
+</tr>
+
+<tr>
+<td class="org-right">051</td>
+<td class="org-left">x0xx'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">052</td>
+<td class="org-left">x1x0'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">053</td>
+<td class="org-left">0x00'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">054</td>
+<td class="org-left">x110'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">055</td>
+<td class="org-left">01x0'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">056</td>
+<td class="org-left">0010'1101</td>
+</tr>
+
+<tr>
+<td class="org-right">057</td>
+<td class="org-left">xxx1'1110</td>
+</tr>
+
+<tr>
+<td class="org-right">058</td>
+<td class="org-left">1010'1110</td>
+</tr>
+
+<tr>
+<td class="org-right">059</td>
+<td class="org-left">x0xx'x101</td>
+</tr>
+
+<tr>
+<td class="org-right">060</td>
+<td class="org-left">x0xx'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">061</td>
+<td class="org-left">0010'1110</td>
+</tr>
+
+<tr>
+<td class="org-right">062</td>
+<td class="org-left">x0xx'x100</td>
+</tr>
+
+<tr>
+<td class="org-right">063</td>
+<td class="org-left">x0xx'x111</td>
+</tr>
+
+<tr>
+<td class="org-right">064</td>
+<td class="org-left">x0xx'x110</td>
+</tr>
+
+<tr>
+<td class="org-right">065</td>
+<td class="org-left">0010'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">066</td>
+<td class="org-left">x1xx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">067</td>
+<td class="org-left">1011'0001</td>
+</tr>
+
+<tr>
+<td class="org-right">068</td>
+<td class="org-left">1010'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">069</td>
+<td class="org-left">xxxx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">070</td>
+<td class="org-left">1010'1111</td>
+</tr>
+
+<tr>
+<td class="org-right">071</td>
+<td class="org-left">0xx1'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">072</td>
+<td class="org-left">xx00'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">073</td>
+<td class="org-left">110x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">074</td>
+<td class="org-left">0xx1'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">075</td>
+<td class="org-left">xx11'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">076</td>
+<td class="org-left">x0x1'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">077</td>
+<td class="org-left">xxx1'0000</td>
+</tr>
+
+<tr>
+<td class="org-right">078</td>
+<td class="org-left">0010'0000</td>
+</tr>
+
+<tr>
+<td class="org-right">079</td>
+<td class="org-left">1010'0000</td>
+</tr>
+
+<tr>
+<td class="org-right">080</td>
+<td class="org-left">xxx1'0001</td>
+</tr>
+
+<tr>
+<td class="org-right">081</td>
+<td class="org-left">0010'0001</td>
+</tr>
+
+<tr>
+<td class="org-right">082</td>
+<td class="org-left">1010'0001</td>
+</tr>
+
+<tr>
+<td class="org-right">083</td>
+<td class="org-left">xxx1'0010</td>
+</tr>
+
+<tr>
+<td class="org-right">084</td>
+<td class="org-left">0010'0010</td>
+</tr>
+
+<tr>
+<td class="org-right">085</td>
+<td class="org-left">1010'0010</td>
+</tr>
+
+<tr>
+<td class="org-right">086</td>
+<td class="org-left">xxx1'0011</td>
+</tr>
+
+<tr>
+<td class="org-right">087</td>
+<td class="org-left">0010'0011</td>
+</tr>
+
+<tr>
+<td class="org-right">088</td>
+<td class="org-left">1010'0011</td>
+</tr>
+
+<tr>
+<td class="org-right">089</td>
+<td class="org-left">xxx1'0100</td>
+</tr>
+
+<tr>
+<td class="org-right">090</td>
+<td class="org-left">0010'0100</td>
+</tr>
+
+<tr>
+<td class="org-right">091</td>
+<td class="org-left">1010'0100</td>
+</tr>
+
+<tr>
+<td class="org-right">092</td>
+<td class="org-left">xxx1'0101</td>
+</tr>
+
+<tr>
+<td class="org-right">093</td>
+<td class="org-left">0010'0101</td>
+</tr>
+
+<tr>
+<td class="org-right">094</td>
+<td class="org-left">1010'0101</td>
+</tr>
+
+<tr>
+<td class="org-right">095</td>
+<td class="org-left">xxx1'0110</td>
+</tr>
+
+<tr>
+<td class="org-right">096</td>
+<td class="org-left">0010'0110</td>
+</tr>
+
+<tr>
+<td class="org-right">097</td>
+<td class="org-left">1010'0110</td>
+</tr>
+
+<tr>
+<td class="org-right">098</td>
+<td class="org-left">xxx1'0111</td>
+</tr>
+
+<tr>
+<td class="org-right">099</td>
+<td class="org-left">0010'0111</td>
+</tr>
+
+<tr>
+<td class="org-right">100</td>
+<td class="org-left">1010'0111</td>
+</tr>
+
+<tr>
+<td class="org-right">101</td>
+<td class="org-left">0xxx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">102</td>
+<td class="org-left">100x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">103</td>
+<td class="org-left">101x'1xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">104</td>
+<td class="org-left">100x'1xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">105</td>
+<td class="org-left">10x1'100x</td>
+</tr>
+
+<tr>
+<td class="org-right">106</td>
+<td class="org-left">x100'xxx0</td>
+</tr>
+
+<tr>
+<td class="org-right">107</td>
+<td class="org-left">010x'xxx0</td>
+</tr>
+
+<tr>
+<td class="org-right">108</td>
+<td class="org-left">101x'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">109</td>
+<td class="org-left">10xx'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">110</td>
+<td class="org-left">x100'xx0x</td>
+</tr>
+
+<tr>
+<td class="org-right">111</td>
+<td class="org-left">10x1'x00x</td>
+</tr>
+
+<tr>
+<td class="org-right">112</td>
+<td class="org-left">010x'xx0x</td>
+</tr>
+
+<tr>
+<td class="org-right">113</td>
+<td class="org-left">x100'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">114</td>
+<td class="org-left">010x'x0xx</td>
+</tr>
+
+<tr>
+<td class="org-right">115</td>
+<td class="org-left">1x0x'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">116</td>
+<td class="org-left">x100'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">117</td>
+<td class="org-left">0011'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">118</td>
+<td class="org-left">010x'0xxx</td>
+</tr>
+
+<tr>
+<td class="org-right">119</td>
+<td class="org-left">0000'11xx</td>
+</tr>
+
+<tr>
+<td class="org-right">120</td>
+<td class="org-left">0100'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">121</td>
+<td class="org-left">0001'xxxx</td>
+</tr>
+
+<tr>
+<td class="org-right">122</td>
+<td class="org-left">0000'10xx</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
-<div id="outline-container-org496ce19" class="outline-3">
-<h3 id="org496ce19"><span class="section-number-3">1.2</span> Opcodes vs MT</h3>
+<div id="outline-container-orgf305f5a" class="outline-3">
+<h3 id="orgf305f5a"><span class="section-number-3">1.2</span> Opcodes vs MT</h3>
 <div class="outline-text-3" id="text-1-2">
-<pre class="example">
-00: 033 037 051 053 060 069 072 101 
-01: 011 040 051 053 060 069 072 101 
-02: 027 039 051 053 060 069 072 101 
-03: 029 042 051 053 060 069 072 101 
-04: 020 037 053 062 069 072 101 
-05: 022 040 053 059 069 072 101 
-06: 025 039 053 064 069 072 101 
-07: 023 042 053 063 069 072 101 
-08: 031 037 051 060 069 072 101 122 
-09: 009 040 051 060 069 072 101 122 
-0a: 005 039 051 060 069 072 101 122 
-0b: 007 042 051 060 069 072 101 122 
-0c: 000 037 062 069 072 101 119 
-0d: 001 040 059 069 072 101 119 
-0e: 004 039 064 069 072 101 119 
-0f: 002 042 063 069 072 101 119 
-10: 033 037 051 060 069 071 074 076 077 101 121 
-11: 011 040 051 060 069 071 074 076 080 101 121 
-12: 027 039 051 060 069 071 074 076 083 101 121 
-13: 029 042 051 060 069 071 074 076 086 101 121 
-14: 020 037 062 069 071 074 076 089 101 121 
-15: 022 040 059 069 071 074 076 092 101 121 
-16: 025 039 064 069 071 074 076 095 101 121 
-17: 023 042 063 069 071 074 076 098 101 121 
-18: 003 031 037 051 060 069 071 074 076 101 121 
-19: 009 010 040 051 060 069 071 074 076 101 121 
-1a: 005 016 039 051 060 069 071 074 076 101 121 
-1b: 007 021 042 051 060 069 071 074 076 101 121 
-1c: 000 037 043 062 069 071 074 076 101 121 
-1d: 001 040 049 059 069 071 074 076 101 121 
-1e: 004 039 057 064 069 071 074 076 101 121 
-1f: 002 042 045 063 069 071 074 076 101 121 
-20: 017 033 037 051 060 069 078 101 
-21: 011 017 040 051 060 069 081 101 
-22: 017 027 039 051 060 069 084 101 
-23: 017 029 042 051 060 069 087 101 
-24: 017 020 037 062 069 090 101 
-25: 017 022 040 059 069 093 101 
-26: 017 025 039 064 069 096 101 
-27: 017 023 042 063 069 099 101 
-28: 008 017 031 037 051 060 069 101 
-29: 009 013 017 040 051 060 069 101 
-2a: 005 017 019 039 051 060 069 101 
-2b: 007 017 026 042 051 060 069 101 
-2c: 000 017 037 047 062 069 101 
-2d: 001 017 040 056 059 069 101 
-2e: 004 017 039 061 064 069 101 
-2f: 002 017 042 063 065 069 101 
-30: 033 037 051 060 069 071 074 075 076 077 101 117 
-31: 011 040 051 060 069 071 074 075 076 080 101 117 
-32: 027 039 051 060 069 071 074 075 076 083 101 117 
-33: 029 042 051 060 069 071 074 075 076 086 101 117 
-34: 020 037 062 069 071 074 075 076 089 101 117 
-35: 022 040 059 069 071 074 075 076 092 101 117 
-36: 025 039 064 069 071 074 075 076 095 101 117 
-37: 023 042 063 069 071 074 075 076 098 101 117 
-38: 003 031 037 051 060 069 071 074 075 076 101 117 
-39: 009 010 040 051 060 069 071 074 075 076 101 117 
-3a: 005 016 039 051 060 069 071 074 075 076 101 117 
-3b: 007 021 042 051 060 069 071 074 075 076 101 117 
-3c: 000 037 043 062 069 071 074 075 076 101 117 
-3d: 001 040 049 059 069 071 074 075 076 101 117 
-3e: 004 039 057 064 069 071 074 075 076 101 117 
-3f: 002 042 045 063 069 071 074 075 076 101 117 
-40: 033 037 053 055 066 069 072 101 106 107 110 112 113 114 116 118 120 
-41: 011 040 053 055 066 069 072 101 110 112 113 114 116 118 120 
-42: 027 039 053 055 066 069 072 101 106 107 113 114 116 118 120 
-43: 029 042 053 055 066 069 072 101 113 114 116 118 120 
-44: 020 037 053 055 066 069 072 101 106 107 110 112 116 118 120 
-45: 022 040 053 055 066 069 072 101 110 112 116 118 120 
-46: 025 039 053 055 066 069 072 101 106 107 116 118 120 
-47: 023 042 053 055 066 069 072 101 116 118 120 
-48: 031 037 055 066 069 072 101 106 107 110 112 113 114 120 
-49: 009 040 055 066 069 072 101 110 112 113 114 120 
-4a: 005 039 055 066 069 072 101 106 107 113 114 120 
-4b: 007 042 055 066 069 072 101 113 114 120 
-4c: 000 037 055 066 069 072 101 106 107 110 112 120 
-4d: 001 040 055 066 069 072 101 110 112 120 
-4e: 004 039 055 066 069 072 101 106 107 120 
-4f: 002 042 052 055 066 069 072 101 120 
-50: 033 037 066 069 071 074 077 101 107 112 114 118 
-51: 011 040 066 069 071 074 080 101 112 114 118 
-52: 027 039 066 069 071 074 083 101 107 114 118 
-53: 029 042 066 069 071 074 086 101 114 118 
-54: 020 037 066 069 071 074 089 101 107 112 118 
-55: 022 040 066 069 071 074 092 101 112 118 
-56: 025 039 066 069 071 074 095 101 107 118 
-57: 023 042 066 069 071 074 098 101 118 
-58: 003 031 037 066 069 071 074 101 107 112 114 
-59: 009 010 040 066 069 071 074 101 112 114 
-5a: 005 016 039 066 069 071 074 101 107 114 
-5b: 007 021 042 066 069 071 074 101 114 
-5c: 000 037 043 066 069 071 074 101 107 112 
-5d: 001 040 049 066 069 071 074 101 112 
-5e: 004 039 057 066 069 071 074 101 107 
-5f: 002 042 045 066 069 071 074 101 
-60: 017 033 037 054 055 066 069 101 
-61: 011 017 040 054 055 066 069 101 
-62: 017 027 039 054 055 066 069 101 
-63: 017 029 042 054 055 066 069 101 
-64: 017 020 037 054 055 066 069 101 
-65: 017 022 040 054 055 066 069 101 
-66: 017 025 039 054 055 066 069 101 
-67: 017 023 042 054 055 066 069 101 
-68: 017 031 037 054 055 066 069 101 
-69: 009 017 040 054 055 066 069 101 
-6a: 005 017 039 054 055 066 069 101 
-6b: 007 017 042 054 055 066 069 101 
-6c: 000 017 037 054 055 066 069 101 
-6d: 001 017 040 054 055 066 069 101 
-6e: 004 017 039 054 055 066 069 101 
-6f: 002 017 042 052 054 055 066 069 101 
-70: 014 033 037 066 069 071 074 075 077 101 
-71: 011 014 040 066 069 071 074 075 080 101 
-72: 014 027 039 066 069 071 074 075 083 101 
-73: 014 029 042 066 069 071 074 075 086 101 
-74: 014 020 037 066 069 071 074 075 089 101 
-75: 014 022 040 066 069 071 074 075 092 101 
-76: 014 025 039 066 069 071 074 075 095 101 
-77: 014 023 042 066 069 071 074 075 098 101 
-78: 003 014 031 037 066 069 071 074 075 101 
-79: 009 010 014 040 066 069 071 074 075 101 
-7a: 005 014 016 039 066 069 071 074 075 101 
-7b: 007 014 021 042 066 069 071 074 075 101 
-7c: 000 014 037 043 066 069 071 074 075 101 
-7d: 001 014 040 049 066 069 071 074 075 101 
-7e: 004 014 039 057 066 069 071 074 075 101 
-7f: 002 014 042 045 066 069 071 074 075 101 
-80: 033 037 051 060 069 072 102 109 115 
-81: 011 040 051 060 069 072 102 109 115 
-82: 027 039 051 060 069 072 102 109 115 
-83: 029 042 051 060 069 072 102 109 115 
-84: 020 037 062 069 072 102 109 115 
-85: 022 040 059 069 072 102 109 115 
-86: 025 039 064 069 072 102 109 115 
-87: 023 042 063 069 072 102 109 115 
-88: 031 037 051 060 069 072 102 104 109 115 
-89: 009 040 051 060 069 072 102 104 109 115 
-8a: 005 039 051 060 069 072 102 104 109 115 
-8b: 007 042 051 060 069 072 102 104 109 115 
-8c: 000 037 062 069 072 102 104 109 115 
-8d: 001 040 059 069 072 102 104 109 115 
-8e: 004 039 064 069 072 102 104 109 115 
-8f: 002 042 063 069 072 102 104 109 115 
-90: 030 032 033 036 037 038 051 060 069 076 077 102 109 111 115 
-91: 011 030 032 036 038 040 051 060 069 076 080 102 109 111 115 
-92: 027 030 032 036 038 039 051 060 069 076 083 102 109 115 
-93: 029 030 032 036 038 042 051 060 069 076 086 102 109 115 
-94: 020 030 032 036 037 038 062 069 076 089 102 109 115 
-95: 022 030 032 036 038 040 059 069 076 092 102 109 115 
-96: 025 030 032 036 038 039 064 069 076 095 102 109 115 
-97: 023 030 032 036 038 042 063 069 076 098 102 109 115 
-98: 003 030 031 032 036 037 038 051 060 069 076 102 104 105 109 111 115 
-99: 009 010 030 032 036 038 040 051 060 069 076 102 104 105 109 111 115 
-9a: 005 016 030 032 036 038 039 051 060 069 076 102 104 109 115 
-9b: 007 021 030 032 036 038 042 051 060 069 076 102 104 109 115 
-9c: 000 030 032 036 037 038 043 062 069 076 102 104 109 115 
-9d: 001 030 032 036 038 040 049 059 069 076 102 104 109 115 
-9e: 004 030 032 036 038 039 057 064 069 076 102 104 109 115 
-9f: 002 030 032 036 038 042 045 063 069 076 102 104 109 115 
-a0: 017 033 037 051 060 069 079 108 109 
-a1: 011 017 040 051 060 069 082 108 109 
-a2: 017 027 039 051 060 069 085 108 109 
-a3: 017 029 042 051 060 069 088 108 109 
-a4: 017 020 037 062 069 091 108 109 
-a5: 017 022 040 059 069 094 108 109 
-a6: 017 025 039 064 069 097 108 109 
-a7: 017 023 042 063 069 100 108 109 
-a8: 006 017 031 037 051 060 069 103 109 
-a9: 009 012 017 040 051 060 069 103 109 
-aa: 005 017 018 039 051 060 069 103 109 
-ab: 007 017 024 042 051 060 069 103 109 
-ac: 000 017 037 044 062 069 103 109 
-ad: 001 017 040 050 059 069 103 109 
-ae: 004 017 039 058 064 069 103 109 
-af: 002 017 042 063 068 069 070 103 109 
-b0: 033 037 051 060 069 075 076 077 108 109 111 
-b1: 011 040 051 060 067 069 075 076 080 108 109 111 
-b2: 027 039 051 060 069 075 076 083 108 109 
-b3: 029 042 051 060 069 075 076 086 108 109 
-b4: 020 037 048 062 069 075 076 089 108 109 
-b5: 022 040 046 059 069 075 076 092 108 109 
-b6: 025 039 064 069 075 076 095 108 109 
-b7: 023 042 063 069 075 076 098 108 109 
-b8: 003 031 037 051 060 069 075 076 103 105 109 111 
-b9: 009 010 040 051 060 069 075 076 103 105 109 111 
-ba: 005 016 039 051 060 069 075 076 103 109 
-bb: 007 021 042 051 060 069 075 076 103 109 
-bc: 000 037 043 062 069 075 076 103 109 
-bd: 001 040 049 059 069 075 076 103 109 
-be: 004 039 057 064 069 075 076 103 109 
-bf: 002 042 045 063 069 075 076 103 109 
-c0: 033 037 066 069 072 073 106 110 113 115 116 
-c1: 011 040 066 069 072 073 110 113 115 116 
-c2: 027 039 066 069 072 073 106 113 115 116 
-c3: 029 042 066 069 072 073 113 115 116 
-c4: 020 037 066 069 072 073 106 110 115 116 
-c5: 022 040 066 069 072 073 110 115 116 
-c6: 025 039 066 069 072 073 106 115 116 
-c7: 023 042 066 069 072 073 115 116 
-c8: 031 037 066 069 072 073 106 110 113 115 
-c9: 009 040 066 069 072 073 110 113 115 
-ca: 005 039 066 069 072 073 106 113 115 
-cb: 007 042 066 069 072 073 113 115 
-cc: 000 037 066 069 072 073 106 110 115 
-cd: 001 040 066 069 072 073 110 115 
-ce: 004 039 066 069 072 073 106 115 
-cf: 002 042 052 066 069 072 073 115 
-d0: 015 033 037 066 069 073 077 115 
-d1: 011 015 040 066 069 073 080 115 
-d2: 015 027 039 066 069 073 083 115 
-d3: 015 029 042 066 069 073 086 115 
-d4: 015 020 037 066 069 073 089 115 
-d5: 015 022 040 066 069 073 092 115 
-d6: 015 025 039 066 069 073 095 115 
-d7: 015 023 042 066 069 073 098 115 
-d8: 003 015 031 037 066 069 073 115 
-d9: 009 010 015 040 066 069 073 115 
-da: 005 015 016 039 066 069 073 115 
-db: 007 015 021 042 066 069 073 115 
-dc: 000 015 037 043 066 069 073 115 
-dd: 001 015 040 049 066 069 073 115 
-de: 004 015 039 057 066 069 073 115 
-df: 002 015 042 045 066 069 073 115 
-e0: 017 028 033 034 035 037 041 054 066 069 
-e1: 011 017 028 034 035 040 041 054 066 069 
-e2: 017 027 028 034 035 039 041 054 066 069 
-e3: 017 028 029 034 035 041 042 054 066 069 
-e4: 017 020 028 034 035 037 041 054 066 069 
-e5: 017 022 028 034 035 040 041 054 066 069 
-e6: 017 025 028 034 035 039 041 054 066 069 
-e7: 017 023 028 034 035 041 042 054 066 069 
-e8: 017 028 031 034 035 037 041 054 066 069 
-e9: 009 017 028 034 035 040 041 054 066 069 
-ea: 005 017 028 034 035 039 041 054 066 069 
-eb: 007 017 028 034 035 041 042 054 066 069 
-ec: 000 017 028 034 035 037 041 054 066 069 
-ed: 001 017 028 034 035 040 041 054 066 069 
-ee: 004 017 028 034 035 039 041 054 066 069 
-ef: 002 017 028 034 035 041 042 052 054 066 069 
-f0: 014 015 028 033 034 035 037 041 066 069 075 077 
-f1: 011 014 015 028 034 035 040 041 066 069 075 080 
-f2: 014 015 027 028 034 035 039 041 066 069 075 083 
-f3: 014 015 028 029 034 035 041 042 066 069 075 086 
-f4: 014 015 020 028 034 035 037 041 066 069 075 089 
-f5: 014 015 022 028 034 035 040 041 066 069 075 092 
-f6: 014 015 025 028 034 035 039 041 066 069 075 095 
-f7: 014 015 023 028 034 035 041 042 066 069 075 098 
-f8: 003 014 015 028 031 034 035 037 041 066 069 075 
-f9: 009 010 014 015 028 034 035 040 041 066 069 075 
-fa: 005 014 015 016 028 034 035 039 041 066 069 075 
-fb: 007 014 015 021 028 034 035 041 042 066 069 075 
-fc: 000 014 015 028 034 035 037 041 043 066 069 075 
-fd: 001 014 015 028 034 035 040 041 049 066 069 075 
-fe: 004 014 015 028 034 035 039 041 057 066 069 075 
-ff: 002 014 015 028 034 035 041 042 045 066 069 075 
-</pre>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Opcode</b></th>
+<th scope="col" class="org-left"><b>Mnemonic</b></th>
+<th scope="col" class="org-left"><b>Filtered MTs</b></th>
+<th scope="col" class="org-left"><b>Derived signals</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">00</td>
+<td class="org-left">INB</td>
+<td class="org-left">051 053 060 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">01</td>
+<td class="org-left">DEB</td>
+<td class="org-left">051 053 060 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">02</td>
+<td class="org-left">IND</td>
+<td class="org-left">051 053 060 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">03</td>
+<td class="org-left">DED</td>
+<td class="org-left">051 053 060 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">04</td>
+<td class="org-left">CLA</td>
+<td class="org-left">053 062 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">05</td>
+<td class="org-left">CMA</td>
+<td class="org-left">053 059 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">06</td>
+<td class="org-left">RSA</td>
+<td class="org-left">053 064 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">07</td>
+<td class="org-left">LSA</td>
+<td class="org-left">053 063 072 101</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">08</td>
+<td class="org-left">SGT</td>
+<td class="org-left">037 072 101 122</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">09</td>
+<td class="org-left">SLT</td>
+<td class="org-left">040 072 101 122</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0a</td>
+<td class="org-left">SEQ</td>
+<td class="org-left">039 072 101 122</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0b</td>
+<td class="org-left">SAZ</td>
+<td class="org-left">042 072 101 122</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0c</td>
+<td class="org-left">SLE</td>
+<td class="org-left">037 072 101 119</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0d</td>
+<td class="org-left">SGE</td>
+<td class="org-left">040 072 101 119</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0e</td>
+<td class="org-left">SNE</td>
+<td class="org-left">039 072 101 119</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">0f</td>
+<td class="org-left">SAN</td>
+<td class="org-left">042 072 101 119</td>
+<td class="org-left"><code>db_in</code> <code>en_skip</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">10</td>
+<td class="org-left">SBS 0</td>
+<td class="org-left">071 074 076 077 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">11</td>
+<td class="org-left">SBS 1</td>
+<td class="org-left">071 074 076 080 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">12</td>
+<td class="org-left">SBS 2</td>
+<td class="org-left">071 074 076 083 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">13</td>
+<td class="org-left">SBS 3</td>
+<td class="org-left">071 074 076 086 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">14</td>
+<td class="org-left">SBS 4</td>
+<td class="org-left">071 074 076 089 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">15</td>
+<td class="org-left">SBS 5</td>
+<td class="org-left">071 074 076 092 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">16</td>
+<td class="org-left">SBS 6</td>
+<td class="org-left">071 074 076 095 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">17</td>
+<td class="org-left">SBS 7</td>
+<td class="org-left">071 074 076 098 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">18</td>
+<td class="org-left">SFS 0</td>
+<td class="org-left">003 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">19</td>
+<td class="org-left">SFS 1</td>
+<td class="org-left">010 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1a</td>
+<td class="org-left">SFS 2</td>
+<td class="org-left">016 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1b</td>
+<td class="org-left">SFS 3</td>
+<td class="org-left">021 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1c</td>
+<td class="org-left">SFS 4</td>
+<td class="org-left">043 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1d</td>
+<td class="org-left">SFS 5</td>
+<td class="org-left">049 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1e</td>
+<td class="org-left">SFS 6</td>
+<td class="org-left">057 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">1f</td>
+<td class="org-left">SES</td>
+<td class="org-left">045 071 074 076 101 121</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">20</td>
+<td class="org-left">SBN 0</td>
+<td class="org-left">017 033 078 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">21</td>
+<td class="org-left">SBN 1</td>
+<td class="org-left">011 017 081 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">22</td>
+<td class="org-left">SBN 2</td>
+<td class="org-left">017 027 084 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">23</td>
+<td class="org-left">SBN 3</td>
+<td class="org-left">017 029 087 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">24</td>
+<td class="org-left">SBN 4</td>
+<td class="org-left">017 020 090 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">25</td>
+<td class="org-left">SBN 5</td>
+<td class="org-left">017 022 093 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">26</td>
+<td class="org-left">SBN 6</td>
+<td class="org-left">017 025 096 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">27</td>
+<td class="org-left">SBN 7</td>
+<td class="org-left">017 023 099 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">28</td>
+<td class="org-left">STC 0</td>
+<td class="org-left">008 017 031 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">29</td>
+<td class="org-left">STC 1</td>
+<td class="org-left">009 013 017 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2a</td>
+<td class="org-left">STC 2</td>
+<td class="org-left">005 017 019 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2b</td>
+<td class="org-left">STC 3</td>
+<td class="org-left">007 017 026 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2c</td>
+<td class="org-left">STC 4</td>
+<td class="org-left">000 017 047 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2d</td>
+<td class="org-left">STC 5</td>
+<td class="org-left">001 017 056 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2e</td>
+<td class="org-left">STC 6</td>
+<td class="org-left">004 017 061 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2f</td>
+<td class="org-left">ENI</td>
+<td class="org-left">002 017 065 101</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">30</td>
+<td class="org-left">SBZ 0</td>
+<td class="org-left">071 074 075 076 077 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">31</td>
+<td class="org-left">SBZ 1</td>
+<td class="org-left">071 074 075 076 080 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">32</td>
+<td class="org-left">SBZ 2</td>
+<td class="org-left">071 074 075 076 083 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">33</td>
+<td class="org-left">SBZ 3</td>
+<td class="org-left">071 074 075 076 086 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">34</td>
+<td class="org-left">SBZ 4</td>
+<td class="org-left">071 074 075 076 089 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">35</td>
+<td class="org-left">SBZ 5</td>
+<td class="org-left">071 074 075 076 092 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">36</td>
+<td class="org-left">SBZ 6</td>
+<td class="org-left">071 074 075 076 095 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">37</td>
+<td class="org-left">SBZ 7</td>
+<td class="org-left">071 074 075 076 098 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">38</td>
+<td class="org-left">SFZ 0</td>
+<td class="org-left">003 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">39</td>
+<td class="org-left">SFZ 1</td>
+<td class="org-left">010 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3a</td>
+<td class="org-left">SFZ 2</td>
+<td class="org-left">016 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3b</td>
+<td class="org-left">SFZ 3</td>
+<td class="org-left">021 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3c</td>
+<td class="org-left">SFZ 4</td>
+<td class="org-left">043 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3d</td>
+<td class="org-left">SFZ 5</td>
+<td class="org-left">049 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3e</td>
+<td class="org-left">SFZ 6</td>
+<td class="org-left">057 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">3f</td>
+<td class="org-left">SEZ</td>
+<td class="org-left">045 071 074 075 076 101 117</td>
+<td class="org-left"><code>db_out</code> <code>en_skip</code> <code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">40</td>
+<td class="org-left">INA DS0</td>
+<td class="org-left">053 055 066 072 101 106 107 110 112 113 114 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">41</td>
+<td class="org-left">INA DS1</td>
+<td class="org-left">053 055 066 072 101 110 112 113 114 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">42</td>
+<td class="org-left">INA DS2</td>
+<td class="org-left">053 055 066 072 101 106 107 113 114 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">43</td>
+<td class="org-left">INA DS3</td>
+<td class="org-left">053 055 066 072 101 113 114 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">44</td>
+<td class="org-left">INA DS4</td>
+<td class="org-left">053 055 066 072 101 106 107 110 112 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">45</td>
+<td class="org-left">INA DS5</td>
+<td class="org-left">053 055 066 072 101 110 112 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">46</td>
+<td class="org-left">INA DS6</td>
+<td class="org-left">053 055 066 072 101 106 107 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">47</td>
+<td class="org-left">INA DS7</td>
+<td class="org-left">053 055 066 072 101 116 118 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">48</td>
+<td class="org-left">INA DS8</td>
+<td class="org-left">055 066 072 101 106 107 110 112 113 114 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">49</td>
+<td class="org-left">INA DS9</td>
+<td class="org-left">055 066 072 101 110 112 113 114 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4a</td>
+<td class="org-left">INA DS10</td>
+<td class="org-left">055 066 072 101 106 107 113 114 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4b</td>
+<td class="org-left">INA DS11</td>
+<td class="org-left">055 066 072 101 113 114 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4c</td>
+<td class="org-left">INA DS12</td>
+<td class="org-left">055 066 072 101 106 107 110 112 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4d</td>
+<td class="org-left">INA DS13</td>
+<td class="org-left">055 066 072 101 110 112 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4e</td>
+<td class="org-left">INA DS14</td>
+<td class="org-left">055 066 072 101 106 107 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4f</td>
+<td class="org-left">INA DS15</td>
+<td class="org-left">052 055 066 072 101 120</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">50</td>
+<td class="org-left">OTA DS0</td>
+<td class="org-left">071 074 101 107 112 114 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">51</td>
+<td class="org-left">OTA DS1</td>
+<td class="org-left">071 074 101 112 114 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">52</td>
+<td class="org-left">OTA DS2</td>
+<td class="org-left">071 074 101 107 114 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">53</td>
+<td class="org-left">OTA DS3</td>
+<td class="org-left">071 074 101 114 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">54</td>
+<td class="org-left">OTA DS4</td>
+<td class="org-left">071 074 101 107 112 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">55</td>
+<td class="org-left">OTA DS5</td>
+<td class="org-left">071 074 101 112 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">56</td>
+<td class="org-left">OTA DS6</td>
+<td class="org-left">071 074 101 107 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">57</td>
+<td class="org-left">OTA DS7</td>
+<td class="org-left">071 074 101 118</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">58</td>
+<td class="org-left">OTA DS8</td>
+<td class="org-left">071 074 101 107 112 114</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">59</td>
+<td class="org-left">OTA DS9</td>
+<td class="org-left">071 074 101 112 114</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5a</td>
+<td class="org-left">OTA DS10</td>
+<td class="org-left">071 074 101 107 114</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5b</td>
+<td class="org-left">OTA DS11</td>
+<td class="org-left">071 074 101 114</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5c</td>
+<td class="org-left">OTA DS12</td>
+<td class="org-left">071 074 101 107 112</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5d</td>
+<td class="org-left">OTA DS13</td>
+<td class="org-left">071 074 101 112</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5e</td>
+<td class="org-left">OTA DS14</td>
+<td class="org-left">071 074 101 107</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5f</td>
+<td class="org-left">NOP</td>
+<td class="org-left">071 074 101</td>
+<td class="org-left"><code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">60</td>
+<td class="org-left">LDA R0</td>
+<td class="org-left">017 033 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">61</td>
+<td class="org-left">LDA R1</td>
+<td class="org-left">011 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">62</td>
+<td class="org-left">LDA R2</td>
+<td class="org-left">017 027 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">63</td>
+<td class="org-left">LDA R3</td>
+<td class="org-left">017 029 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">64</td>
+<td class="org-left">LDA R4</td>
+<td class="org-left">017 020 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">65</td>
+<td class="org-left">LDA R5</td>
+<td class="org-left">017 022 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">66</td>
+<td class="org-left">LDA R6</td>
+<td class="org-left">017 025 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">67</td>
+<td class="org-left">LDA R7</td>
+<td class="org-left">017 023 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">68</td>
+<td class="org-left">LDA R8</td>
+<td class="org-left">017 031 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">69</td>
+<td class="org-left">LDA R9</td>
+<td class="org-left">009 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6a</td>
+<td class="org-left">LDA R10</td>
+<td class="org-left">005 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6b</td>
+<td class="org-left">LDA R11</td>
+<td class="org-left">007 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6c</td>
+<td class="org-left">LDA R12</td>
+<td class="org-left">000 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6d</td>
+<td class="org-left">LDA R13</td>
+<td class="org-left">001 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6e</td>
+<td class="org-left">LDA R14</td>
+<td class="org-left">004 017 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">6f</td>
+<td class="org-left">LDA R15</td>
+<td class="org-left">002 017 052 054 055 066 101</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">70</td>
+<td class="org-left">STA R0</td>
+<td class="org-left">014 033 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">71</td>
+<td class="org-left">STA R1</td>
+<td class="org-left">011 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">72</td>
+<td class="org-left">STA R2</td>
+<td class="org-left">014 027 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">73</td>
+<td class="org-left">STA R3</td>
+<td class="org-left">014 029 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">74</td>
+<td class="org-left">STA R4</td>
+<td class="org-left">014 020 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">75</td>
+<td class="org-left">STA R5</td>
+<td class="org-left">014 022 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">76</td>
+<td class="org-left">STA R6</td>
+<td class="org-left">014 025 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">77</td>
+<td class="org-left">STA R7</td>
+<td class="org-left">014 023 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">78</td>
+<td class="org-left">STA R8</td>
+<td class="org-left">014 031 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">79</td>
+<td class="org-left">STA R9</td>
+<td class="org-left">009 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7a</td>
+<td class="org-left">STA R10</td>
+<td class="org-left">005 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7b</td>
+<td class="org-left">STA R11</td>
+<td class="org-left">007 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7c</td>
+<td class="org-left">STA R12</td>
+<td class="org-left">000 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7d</td>
+<td class="org-left">STA R13</td>
+<td class="org-left">001 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7e</td>
+<td class="org-left">STA R14</td>
+<td class="org-left">004 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">7f</td>
+<td class="org-left">STA R15</td>
+<td class="org-left">002 014 071 074 075 101</td>
+<td class="org-left"><code>reg_wr</code> <code>db_out</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">80</td>
+<td class="org-left">JMP 0xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">81</td>
+<td class="org-left">JMP 1xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">82</td>
+<td class="org-left">JMP 2xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">83</td>
+<td class="org-left">JMP 3xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">84</td>
+<td class="org-left">JMP 4xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">85</td>
+<td class="org-left">JMP 5xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">86</td>
+<td class="org-left">JMP 6xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">87</td>
+<td class="org-left">JMP 7xx</td>
+<td class="org-left">072 102 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">88</td>
+<td class="org-left">JSB 0xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">89</td>
+<td class="org-left">JSB 1xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8a</td>
+<td class="org-left">JSB 2xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8b</td>
+<td class="org-left">JSB 3xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8c</td>
+<td class="org-left">JSB 4xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8d</td>
+<td class="org-left">JSB 5xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8e</td>
+<td class="org-left">JSB 6xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">8f</td>
+<td class="org-left">JSB 7xx</td>
+<td class="org-left">072 102 104 109 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">90</td>
+<td class="org-left">JAI 0</td>
+<td class="org-left">030 032 036 038 076 102 109 111 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">91</td>
+<td class="org-left">JAI 1</td>
+<td class="org-left">030 032 036 038 076 102 109 111 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">92</td>
+<td class="org-left">JAI 2</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">93</td>
+<td class="org-left">JAI 3</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">94</td>
+<td class="org-left">JAI 4</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">95</td>
+<td class="org-left">JAI 5</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">96</td>
+<td class="org-left">JAI 6</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">97</td>
+<td class="org-left">JAI 7</td>
+<td class="org-left">030 032 036 038 076 102 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">98</td>
+<td class="org-left">JAS 0</td>
+<td class="org-left">030 032 036 038 076 102 104 105 109 111 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">99</td>
+<td class="org-left">JAS 1</td>
+<td class="org-left">030 032 036 038 076 102 104 105 109 111 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9a</td>
+<td class="org-left">JAS 2</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9b</td>
+<td class="org-left">JAS 3</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9c</td>
+<td class="org-left">JAS 4</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9d</td>
+<td class="org-left">JAS 5</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9e</td>
+<td class="org-left">JAS 6</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">9f</td>
+<td class="org-left">JAS 7</td>
+<td class="org-left">030 032 036 038 076 102 104 109 115</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a0</td>
+<td class="org-left">CBN 0</td>
+<td class="org-left">017 033 079 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a1</td>
+<td class="org-left">CBN 1</td>
+<td class="org-left">011 017 082 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a2</td>
+<td class="org-left">CBN 2</td>
+<td class="org-left">017 027 085 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a3</td>
+<td class="org-left">CBN 3</td>
+<td class="org-left">017 029 088 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a4</td>
+<td class="org-left">CBN 4</td>
+<td class="org-left">017 020 091 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a5</td>
+<td class="org-left">CBN 5</td>
+<td class="org-left">017 022 094 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a6</td>
+<td class="org-left">CBN 6</td>
+<td class="org-left">017 025 097 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a7</td>
+<td class="org-left">CBN 7</td>
+<td class="org-left">017 023 100 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a8</td>
+<td class="org-left">CLC 0</td>
+<td class="org-left">006 017 031 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">a9</td>
+<td class="org-left">CLC 1</td>
+<td class="org-left">009 012 017 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">aa</td>
+<td class="org-left">CLC 2</td>
+<td class="org-left">005 017 018 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ab</td>
+<td class="org-left">CLC 3</td>
+<td class="org-left">007 017 024 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ac</td>
+<td class="org-left">CLC 4</td>
+<td class="org-left">000 017 044 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ad</td>
+<td class="org-left">CLC 5</td>
+<td class="org-left">001 017 050 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ae</td>
+<td class="org-left">CLC 6</td>
+<td class="org-left">004 017 058 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">af</td>
+<td class="org-left">DSI</td>
+<td class="org-left">002 017 068 070 109</td>
+<td class="org-left"><code>reg_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b0</td>
+<td class="org-left">RTI</td>
+<td class="org-left">075 076 108 109 111</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b1</td>
+<td class="org-left">RTE</td>
+<td class="org-left">067 075 076 108 109 111</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b2</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b3</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b4</td>
+<td class="org-left">STE</td>
+<td class="org-left">048 075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b5</td>
+<td class="org-left">CLE</td>
+<td class="org-left">046 075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b6</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b7</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b8</td>
+<td class="org-left">RTS</td>
+<td class="org-left">075 076 103 105 109 111</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">b9</td>
+<td class="org-left">RSE</td>
+<td class="org-left">075 076 103 105 109 111</td>
+<td class="org-left"><code>acc_rd</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ba</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">bb</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">bc</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">bd</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">be</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">bf</td>
+<td class="org-left">--</td>
+<td class="org-left">075 076 109</td>
+<td class="org-left"><code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c0</td>
+<td class="org-left">OTR DS0,xx</td>
+<td class="org-left">072 073 106 110 113 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c1</td>
+<td class="org-left">OTR DS1,xx</td>
+<td class="org-left">072 073 110 113 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c2</td>
+<td class="org-left">OTR DS2,xx</td>
+<td class="org-left">072 073 106 113 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c3</td>
+<td class="org-left">OTR DS3,xx</td>
+<td class="org-left">072 073 113 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c4</td>
+<td class="org-left">OTR DS4,xx</td>
+<td class="org-left">072 073 106 110 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c5</td>
+<td class="org-left">OTR DS5,xx</td>
+<td class="org-left">072 073 110 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c6</td>
+<td class="org-left">OTR DS6,xx</td>
+<td class="org-left">072 073 106 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c7</td>
+<td class="org-left">OTR DS7,xx</td>
+<td class="org-left">072 073 115 116</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c8</td>
+<td class="org-left">OTR DS8,xx</td>
+<td class="org-left">072 073 106 110 113 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">c9</td>
+<td class="org-left">OTR DS9,xx</td>
+<td class="org-left">072 073 110 113 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ca</td>
+<td class="org-left">OTR DS10,xx</td>
+<td class="org-left">072 073 106 113 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">cb</td>
+<td class="org-left">OTR DS11,xx</td>
+<td class="org-left">072 073 113 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">cc</td>
+<td class="org-left">OTR DS12,xx</td>
+<td class="org-left">072 073 106 110 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">cd</td>
+<td class="org-left">OTR DS13,xx</td>
+<td class="org-left">072 073 110 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ce</td>
+<td class="org-left">OTR DS14,xx</td>
+<td class="org-left">072 073 106 115</td>
+<td class="org-left"><code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">cf</td>
+<td class="org-left">LDR xx</td>
+<td class="org-left">052 066 072 073 115</td>
+<td class="org-left"><code>db_in</code> <code>acc_wr</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d0</td>
+<td class="org-left">STR R0,xx</td>
+<td class="org-left">015 033 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d1</td>
+<td class="org-left">STR R1,xx</td>
+<td class="org-left">011 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d2</td>
+<td class="org-left">STR R2,xx</td>
+<td class="org-left">015 027 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d3</td>
+<td class="org-left">STR R3,xx</td>
+<td class="org-left">015 029 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d4</td>
+<td class="org-left">STR R4,xx</td>
+<td class="org-left">015 020 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d5</td>
+<td class="org-left">STR R5,xx</td>
+<td class="org-left">015 022 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d6</td>
+<td class="org-left">STR R6,xx</td>
+<td class="org-left">015 025 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d7</td>
+<td class="org-left">STR R7,xx</td>
+<td class="org-left">015 023 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d8</td>
+<td class="org-left">STR R8,xx</td>
+<td class="org-left">015 031 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">d9</td>
+<td class="org-left">STR R9,xx</td>
+<td class="org-left">009 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">da</td>
+<td class="org-left">STR R10,xx</td>
+<td class="org-left">005 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">db</td>
+<td class="org-left">STR R11,xx</td>
+<td class="org-left">007 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">dc</td>
+<td class="org-left">STR R12,xx</td>
+<td class="org-left">000 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">dd</td>
+<td class="org-left">STR R13,xx</td>
+<td class="org-left">001 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">de</td>
+<td class="org-left">STR R14,xx</td>
+<td class="org-left">004 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">df</td>
+<td class="org-left">STR R15,xx</td>
+<td class="org-left">002 015 073 115</td>
+<td class="org-left"><code>reg_wr</code> <code>db_in</code> <code>pa_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e0</td>
+<td class="org-left">LDI R0</td>
+<td class="org-left">017 028 033 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e1</td>
+<td class="org-left">LDI R1</td>
+<td class="org-left">011 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e2</td>
+<td class="org-left">LDI R2</td>
+<td class="org-left">017 027 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e3</td>
+<td class="org-left">LDI R3</td>
+<td class="org-left">017 028 029 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e4</td>
+<td class="org-left">LDI R4</td>
+<td class="org-left">017 020 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e5</td>
+<td class="org-left">LDI R5</td>
+<td class="org-left">017 022 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e6</td>
+<td class="org-left">LDI R6</td>
+<td class="org-left">017 025 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e7</td>
+<td class="org-left">LDI R7</td>
+<td class="org-left">017 023 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e8</td>
+<td class="org-left">LDI R8</td>
+<td class="org-left">017 028 031 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">e9</td>
+<td class="org-left">LDI R9</td>
+<td class="org-left">009 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ea</td>
+<td class="org-left">LDI R10</td>
+<td class="org-left">005 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">eb</td>
+<td class="org-left">LDI R11</td>
+<td class="org-left">007 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ec</td>
+<td class="org-left">LDI R12</td>
+<td class="org-left">000 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ed</td>
+<td class="org-left">LDI R13</td>
+<td class="org-left">001 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ee</td>
+<td class="org-left">LDI R14</td>
+<td class="org-left">004 017 028 034 035 041 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ef</td>
+<td class="org-left">LDI R15</td>
+<td class="org-left">002 017 028 034 035 041 052 054 066</td>
+<td class="org-left"><code>reg_rd</code> <code>acc_wr</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f0</td>
+<td class="org-left">STI R0</td>
+<td class="org-left">014 015 028 033 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f1</td>
+<td class="org-left">STI R1</td>
+<td class="org-left">011 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f2</td>
+<td class="org-left">STI R2</td>
+<td class="org-left">014 015 027 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f3</td>
+<td class="org-left">STI R3</td>
+<td class="org-left">014 015 028 029 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f4</td>
+<td class="org-left">STI R4</td>
+<td class="org-left">014 015 020 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f5</td>
+<td class="org-left">STI R5</td>
+<td class="org-left">014 015 022 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f6</td>
+<td class="org-left">STI R6</td>
+<td class="org-left">014 015 025 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f7</td>
+<td class="org-left">STI R7</td>
+<td class="org-left">014 015 023 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f8</td>
+<td class="org-left">STI R8</td>
+<td class="org-left">014 015 028 031 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">f9</td>
+<td class="org-left">STI R9</td>
+<td class="org-left">009 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">fa</td>
+<td class="org-left">STI R10</td>
+<td class="org-left">005 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">fb</td>
+<td class="org-left">STI R11</td>
+<td class="org-left">007 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">fc</td>
+<td class="org-left">STI R12</td>
+<td class="org-left">000 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">fd</td>
+<td class="org-left">STI R13</td>
+<td class="org-left">001 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">fe</td>
+<td class="org-left">STI R14</td>
+<td class="org-left">004 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ff</td>
+<td class="org-left">STI R15</td>
+<td class="org-left">002 014 015 028 034 035 041 075</td>
+<td class="org-left"><code>reg_wr</code> <code>acc_rd</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+"Filtered MTs" is a subset of all the MTs that apply to a particular opcode. I took out all MTs that have no effect (for example, a MT to select a register when no register is being accessed).
+</p>
+
+<p>
+These are the "derived signals".
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Signal</b></th>
+<th scope="col" class="org-left"><b>Equation</b></th>
+<th scope="col" class="org-left"><b>Description</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>db_in</code></td>
+<td class="org-left"><code>MT72 or MT73</code></td>
+<td class="org-left">Data bus in input</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>db_out</code></td>
+<td class="org-left"><code>MT71</code></td>
+<td class="org-left">Data bus in output</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>reg_rd</code></td>
+<td class="org-left"><code>MT17</code></td>
+<td class="org-left">Output a register on internal bus</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>reg_wr</code></td>
+<td class="org-left"><code>MT14 or MT15</code></td>
+<td class="org-left">Load a register from internal bus</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>en_skip</code></td>
+<td class="org-left"><code>MT117 or MT119 or MT121 or MT122</code></td>
+<td class="org-left">Enable skip signal</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>acc_rd</code></td>
+<td class="org-left"><code>MT74 or MT75 or MT76</code></td>
+<td class="org-left">Output accumulator on internal bus</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>acc_wr</code></td>
+<td class="org-left"><code>MT52 or MT53 or MT54 or MT55</code></td>
+<td class="org-left">Load accumulator</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>pa_wr</code></td>
+<td class="org-left"><code>MT111 or MT115 or en_skip</code></td>
+<td class="org-left">Load PA</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: F.Ulivi</p>
-<p class="date">Created: 2021-06-06 Sun 18:09</p>
+<p class="date">Created: 2021-06-19 Sat 11:27</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
